@@ -80,9 +80,7 @@ Their journey is a call to responsibility.
 Their mission is to help India rediscover the sacred connection between human life and the natural world.<strong className="text-foreground">PaperShoes</strong> is a metaphor. Paper is fragile. It tears easily, it falls apart in water, it cannot withstand force. And yet, three runners are attempting to run 80 marathons in 80 days — wearing that fragility as their symbol.
               </p>
               
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-                Why? Because India's natural ecosystems are just as fragile. Our rivers, forests, coastlines, and wildlife are under immense pressure. And like paper, they can be destroyed if we're not careful. But also like paper, they can carry stories, preserve knowledge, and spark change.
-              </p>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">Why? Because India's natural ecosystems are just as fragile. Our rivers, forests, coastlines, and wildlife are under immense pressure.</p>
 
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
                 This campaign isn't about athletic achievement. It's about <strong className="text-sage">symbolic action</strong>. It's about three people willing to push their bodies to the limit to show that fragility requires protection, that courage means moving even when the odds are stacked against you, and that responsibility is a choice we make every single day.
