@@ -7,7 +7,7 @@ const frameworks = [
   {
     icon: Feather,
     title: 'Symbolic Act',
-    description: 'Running 80 marathons in paper shoes represents the fragility of our ecosystems. This symbolic act draws global attention to environmental urgency while demonstrating that meaningful change requires courage and sacrifice.',
+    description: 'Eighty marathons in eighty days — not for records or glory, but as a human-powered symbol of love, responsibility, and urgency — a message carried on foot to awaken a nation. This act of endurance reminds us that when individuals push their limits for the Earth, we too can change the habits that shape our shared future. A single symbolic step, repeated again and again, has the power to stir millions.',
   },
   {
     icon: Users,
