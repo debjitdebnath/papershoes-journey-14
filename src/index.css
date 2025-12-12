@@ -6,69 +6,75 @@
 
 @layer base {
   :root {
-    /* Earthy, nature-inspired palette */
-    --background: 50 33% 97%;
-    --foreground: 30 20% 20%;
+    /* Modern earthy palette with orange accents */
+    --background: 0 0% 100%;
+    --foreground: 20 15% 15%;
 
-    --card: 40 30% 96%;
-    --card-foreground: 30 20% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 15% 15%;
 
-    --popover: 50 33% 97%;
-    --popover-foreground: 30 20% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 15% 15%;
 
     /* Sage green - primary brand color */
-    --primary: 100 25% 56%;
-    --primary-foreground: 50 33% 97%;
+    --primary: 142 35% 42%;
+    --primary-foreground: 0 0% 100%;
 
     /* Warm beige - secondary */
-    --secondary: 35 30% 92%;
-    --secondary-foreground: 30 25% 35%;
+    --secondary: 35 25% 95%;
+    --secondary-foreground: 25 30% 30%;
 
-    --muted: 40 20% 94%;
-    --muted-foreground: 30 15% 50%;
+    --muted: 40 15% 96%;
+    --muted-foreground: 25 15% 45%;
 
-    /* Soft brown accent */
-    --accent: 30 25% 44%;
-    --accent-foreground: 50 33% 97%;
+    /* Warm orange accent */
+    --accent: 25 85% 55%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
-    --destructive-foreground: 50 33% 97%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 35 20% 88%;
-    --input: 35 20% 88%;
-    --ring: 100 25% 56%;
+    --border: 30 15% 90%;
+    --input: 30 15% 90%;
+    --ring: 142 35% 42%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
     /* Custom brand colors */
-    --sage: 100 25% 56%;
-    --sage-light: 100 30% 92%;
-    --sage-dark: 100 25% 40%;
-    --beige: 40 40% 94%;
-    --beige-warm: 35 35% 88%;
-    --brown: 30 25% 44%;
-    --brown-light: 30 20% 65%;
-    --cream: 50 33% 97%;
-    --earth: 25 30% 25%;
+    --sage: 142 35% 42%;
+    --sage-light: 142 30% 94%;
+    --sage-dark: 142 40% 32%;
+    --beige: 35 30% 96%;
+    --beige-warm: 30 25% 92%;
+    --brown: 25 35% 35%;
+    --brown-light: 25 25% 55%;
+    --cream: 40 30% 98%;
+    --earth: 20 25% 22%;
+    --terracotta: 18 65% 55%;
+    --terracotta-light: 18 60% 92%;
+    --orange: 25 85% 55%;
+    --orange-light: 30 80% 94%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(180deg, hsl(50 33% 97%) 0%, hsl(40 40% 94%) 100%);
-    --gradient-sage: linear-gradient(135deg, hsl(100 25% 56%) 0%, hsl(100 25% 45%) 100%);
-    --gradient-warm: linear-gradient(180deg, hsl(40 40% 94%) 0%, hsl(50 33% 97%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(35 30% 96%) 100%);
+    --gradient-sage: linear-gradient(135deg, hsl(142 35% 42%) 0%, hsl(142 40% 32%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(35 30% 96%) 0%, hsl(0 0% 100%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(25 85% 55%) 0%, hsl(18 65% 55%) 100%);
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(30 20% 20% / 0.08);
-    --shadow-card: 0 8px 30px -8px hsl(30 20% 20% / 0.1);
-    --shadow-elevated: 0 20px 50px -12px hsl(30 20% 20% / 0.15);
+    --shadow-soft: 0 4px 20px -4px hsl(20 15% 15% / 0.06);
+    --shadow-card: 0 8px 30px -8px hsl(20 15% 15% / 0.08);
+    --shadow-elevated: 0 20px 50px -12px hsl(20 15% 15% / 0.12);
+    --shadow-glow: 0 0 40px hsl(142 35% 42% / 0.15);
 
-    --sidebar-background: 50 33% 97%;
-    --sidebar-foreground: 30 20% 20%;
-    --sidebar-primary: 100 25% 56%;
-    --sidebar-primary-foreground: 50 33% 97%;
-    --sidebar-accent: 40 40% 94%;
-    --sidebar-accent-foreground: 30 20% 20%;
-    --sidebar-border: 35 20% 88%;
-    --sidebar-ring: 100 25% 56%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 20 15% 15%;
+    --sidebar-primary: 142 35% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 35 30% 96%;
+    --sidebar-accent-foreground: 20 15% 15%;
+    --sidebar-border: 30 15% 90%;
+    --sidebar-ring: 142 35% 42%;
   }
 
   .dark {
