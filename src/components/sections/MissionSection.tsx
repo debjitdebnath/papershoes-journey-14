@@ -56,34 +56,32 @@ const MissionSection = () => {
           delay: 0.3
         }} className="bg-card rounded-2xl p-8 md:p-12 shadow-card">
             <div className="prose prose-lg max-w-none">
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">No one would ever attempt to run a marathon wearing shoes made of paper — we know instinctively that they would tear, collapse, and injure us.
-We protect our feet with advanced materials, cushioning, and technology because we understand their fragility.
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6 text-justify">No one would attempt a marathon in shoes made of paper — we instinctively know they would tear apart, offer no support, and leave us injured. 
 
-Yet when it comes to nature — which is just as delicate, just as vulnerable — we behave as though it can absorb endless pressure.
-We extract, burn, pollute, discard, and move on… forgetting that what we harm is what sustains us.
+We protect our feet with advanced materials because we understand their vulnerability. Yet when it comes to nature — equally delicate, equally finite — we behave as though it can endure anything. 
 
-PaperShoes is not a literal idea.
-It is a metaphor — a mirror we hold up to ourselves.
+We extract, burn, pollute, discard, and assume it will somehow recover. We forget that what we damage is the very system that sustains us.
 
-It asks a simple, confronting question:
-If we would never run on something as fragile as paper, why do we run our lives across a planet we refuse to protect?
+PaperShoes is not meant to be taken literally. It is a metaphor — a mirror held up to our choices. It asks a stark question: If we wouldn’t run on something as fragile as paper, why do we run our lives across a planet we refuse to safeguard?
 
-Three foreign runners — long-time residents who call India home — are setting out on a world-first challenge to bring this truth to the forefront:
+Three foreign-born runners — long-time residents who proudly call India home — are setting out on a world-first challenge to bring this truth to the surface: 
 
-**80 marathons in 80 days across India.
+80 marathons in 80 days across India. 80 invitations to pause. 
 
-80 opportunities to awaken awareness.
-80 chances to remind us that we are inseparable from the nature we harm.**
+80 reminders that the health of our planet and the health of our lives are inseparable. 
 
-Their endurance is an act of devotion.
-Their journey is a call to responsibility.
-Their mission is to help India rediscover the sacred connection between human life and the natural world.<strong className="text-foreground">PaperShoes</strong> is a metaphor. Paper is fragile. It tears easily, it falls apart in water, it cannot withstand force. And yet, three runners are attempting to run 80 marathons in 80 days — wearing that fragility as their symbol.
+Their endurance is not a pursuit of records. It is an offering — an act of devotion to the land they love. 
+
+Their journey is a call to responsibility, to awareness, and to reawakening India’s sacred relationship with nature. 
+
+PaperShoes symbolizes fragility, but it also symbolizes choice. Fragile things endure only when we protect them. Our ecosystems — rivers, forests, coasts, and wildlife — are under immense and increasing strain. 
+
+This campaign is not about athletic triumph. It is about moral clarity. About three individuals willing to push their limits to show that what is fragile must be defended, that courage means stepping forward even when the path is uncertain, and that responsibility is a daily practice — not an abstract idea.<strong className="text-foreground">PaperShoes</strong> ​                 
               </p>
               
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">Why? Because India's natural ecosystems are just as fragile. Our rivers, forests, coastlines, and wildlife are under immense pressure.</p>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">​</p>
 
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-                This campaign isn't about athletic achievement. It's about <strong className="text-sage">symbolic action</strong>. It's about three people willing to push their bodies to the limit to show that fragility requires protection, that courage means moving even when the odds are stacked against you, and that responsibility is a choice we make every single day.
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">​​<strong className="text-sage">symbolic action</strong>​
               </p>
 
               <div className="mt-8 pt-8 border-t border-border">
