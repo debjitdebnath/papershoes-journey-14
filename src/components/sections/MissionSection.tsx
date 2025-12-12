@@ -56,25 +56,19 @@ const MissionSection = () => {
           delay: 0.3
         }} className="bg-card rounded-2xl p-8 md:p-12 shadow-card">
             <div className="prose prose-lg max-w-none">
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6 text-justify">No one would attempt a marathon in shoes made of paper — we instinctively know they would tear apart, offer no support, and leave us injured. 
-
-We protect our feet with advanced materials because we understand their vulnerability. Yet when it comes to nature — equally delicate, equally finite — we behave as though it can endure anything. 
-
-We extract, burn, pollute, discard, and assume it will somehow recover. We forget that what we damage is the very system that sustains us.
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6 text-justify">No one would attempt a marathon in shoes made of paper — we instinctively know they would tear apart, offer no support, and leave us injured. We protect our feet with advanced materials because we understand their vulnerability. Yet when it comes to nature — equally delicate, equally finite — we behave as though it can endure anything. We extract, burn, pollute, discard, and assume it will somehow recover. We forget that what we damage is the very system that sustains us.
 
 PaperShoes is not meant to be taken literally. It is a metaphor — a mirror held up to our choices. It asks a stark question: If we wouldn’t run on something as fragile as paper, why do we run our lives across a planet we refuse to safeguard?
 
-Three foreign-born runners — long-time residents who proudly call India home — are setting out on a world-first challenge to bring this truth to the surface: 
+Three foreign-born runners — long-time residents who proudly call India home — are setting out on a world-first challenge to bring this truth to the surface:
 
-80 marathons in 80 days across India. 80 invitations to pause. 
+80 marathons in 80 days across India.
+80 invitations to pause.
+80 reminders that the health of our planet and the health of our lives are inseparable.
 
-80 reminders that the health of our planet and the health of our lives are inseparable. 
+Their endurance is not a pursuit of records. It is an offering — an act of devotion to the land they love. Their journey is a call to responsibility, to awareness, and to reawakening India’s sacred relationship with nature.
 
-Their endurance is not a pursuit of records. It is an offering — an act of devotion to the land they love. 
-
-Their journey is a call to responsibility, to awareness, and to reawakening India’s sacred relationship with nature. 
-
-PaperShoes symbolizes fragility, but it also symbolizes choice. Fragile things endure only when we protect them. Our ecosystems — rivers, forests, coasts, and wildlife — are under immense and increasing strain. 
+PaperShoes symbolizes fragility, but it also symbolizes choice. Fragile things endure only when we protect them. Our ecosystems — rivers, forests, coasts, and wildlife — are under immense and increasing strain.
 
 This campaign is not about athletic triumph. It is about moral clarity. About three individuals willing to push their limits to show that what is fragile must be defended, that courage means stepping forward even when the path is uncertain, and that responsibility is a daily practice — not an abstract idea.<strong className="text-foreground">PaperShoes</strong> ​                 
               </p>
