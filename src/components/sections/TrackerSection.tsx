@@ -3,10 +3,12 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { MapPin, Calendar, Users, Trash2, School } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 const TrackerSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px"
+  });
 
   // Sample data - would be dynamic in production
   const todayData = {
@@ -15,19 +17,23 @@ const TrackerSection = () => {
     school: 'Delhi Public School, Pune',
     plasticCollected: '142',
     volunteers: '87',
-    marathonNumber: 23,
+    marathonNumber: 23
   };
-
-  return (
-    <section id="tracker" className="py-24 bg-background" ref={ref}>
+  return <section id="tracker" className="py-24 bg-background" ref={ref}>
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 30
+      }} animate={isInView ? {
+        opacity: 1,
+        y: 0
+      } : {
+        opacity: 0,
+        y: 30
+      }} transition={{
+        duration: 0.6
+      }} className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark text-sm font-medium rounded-full mb-4">
             Live Updates
           </span>
@@ -41,12 +47,19 @@ const TrackerSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Map Placeholder */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-card rounded-2xl overflow-hidden shadow-card"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          x: -30
+        }} animate={isInView ? {
+          opacity: 1,
+          x: 0
+        } : {
+          opacity: 0,
+          x: -30
+        }} transition={{
+          duration: 0.6,
+          delay: 0.2
+        }} className="bg-card rounded-2xl overflow-hidden shadow-card">
             <div className="aspect-square md:aspect-[4/3] bg-beige-warm flex items-center justify-center relative">
               {/* Map placeholder with stylized India outline */}
               <div className="absolute inset-0 flex items-center justify-center">
@@ -66,19 +79,30 @@ const TrackerSection = () => {
               {/* Route dots decoration */}
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-sage rounded-full animate-pulse" />
-                <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-sage rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
-                <div className="absolute bottom-1/3 right-1/3 w-3 h-3 bg-sage/60 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+                <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-sage rounded-full animate-pulse" style={{
+                animationDelay: '0.5s'
+              }} />
+                <div className="absolute bottom-1/3 right-1/3 w-3 h-3 bg-sage/60 rounded-full animate-pulse" style={{
+                animationDelay: '1s'
+              }} />
               </div>
             </div>
           </motion.div>
 
           {/* Daily Summary Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-card rounded-2xl p-8 shadow-card"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          x: 30
+        }} animate={isInView ? {
+          opacity: 1,
+          x: 0
+        } : {
+          opacity: 0,
+          x: 30
+        }} transition={{
+          duration: 0.6,
+          delay: 0.3
+        }} className="bg-card rounded-2xl p-8 shadow-card">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-sage rounded-xl flex items-center justify-center">
                 <span className="text-xl font-bold text-primary-foreground">
@@ -86,7 +110,7 @@ const TrackerSection = () => {
                 </span>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-foreground">Today's Marathon</h3>
+                <h3 className="text-xl font-bold text-foreground">Today's Marathon(e.g.)</h3>
                 <p className="text-muted-foreground">{todayData.date}</p>
               </div>
             </div>
@@ -134,8 +158,6 @@ const TrackerSection = () => {
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default TrackerSection;
