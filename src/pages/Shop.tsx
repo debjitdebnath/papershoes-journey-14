@@ -86,7 +86,7 @@ const Shop = () => {
                       <span>{product.impact}</span>
                     </div>
                     <div className="flex gap-2">
-                      <Button variant="outline" className="flex-1" onClick={() => addToCart(product)}>Add to Cart</Button>
+                      <Button variant="outline" className="flex-1" disabled>Coming Soon</Button>
                       <Button variant="hero" className="flex-1" asChild>
                         <Link to={`/product/${product.id}`}>View Details</Link>
                       </Button>
