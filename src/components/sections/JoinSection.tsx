@@ -10,28 +10,28 @@ const pathways = [
     title: 'Volunteer',
     description: 'Join cleanup drives, support marathon days, and become part of the movement in your city.',
     cta: 'Become a Volunteer',
-    href: '#volunteer',
+    href: 'https://forms.gle/oKeAr6ybVt5cnTpA6',
   },
   {
     icon: School,
     title: 'Host a School Workshop',
     description: 'Bring our environmental education program to your school. We provide all materials and facilitators.',
     cta: 'Invite Us to Your School',
-    href: '#school',
+    href: 'https://forms.gle/aE5DMEJQEuu3WDyV7',
   },
   {
     icon: Building2,
     title: 'Corporate Partnership',
     description: 'Align your CSR initiatives with tangible impact. Sponsor marathons, fund programs, or engage employees.',
     cta: 'Partner with Us',
-    href: '#partner',
+    href: 'https://forms.gle/f6j91sSbvW1BA8xz7',
   },
   {
     icon: Newspaper,
     title: 'Media & Press',
     description: 'Cover this world-first attempt. Access press kits, arrange interviews, and share the story.',
     cta: 'Get Press Kit',
-    href: '#press',
+    href: 'https://forms.gle/VHMjY9gtTTztiHqx7',
   },
 ];
 
@@ -79,8 +79,10 @@ const JoinSection = () => {
               <p className="text-muted-foreground leading-relaxed mb-6 flex-grow">
                 {pathway.description}
               </p>
-              <Button variant="outline" className="w-full">
-                {pathway.cta}
+              <Button variant="outline" className="w-full" asChild>
+                <a href={pathway.href} target="_blank" rel="noopener noreferrer">
+                  {pathway.cta}
+                </a>
               </Button>
             </motion.div>
           ))}
