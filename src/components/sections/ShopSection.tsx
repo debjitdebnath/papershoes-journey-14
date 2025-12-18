@@ -67,8 +67,8 @@ const ShopSection = () => {
                   <span>{product.impact}</span>
                 </div>
 
-                <Button variant="outline" className="w-full" onClick={() => addToCart(product)}>
-                  Add to Cart
+                <Button variant="outline" className="w-full" disabled>
+                  Coming Soon
                 </Button>
               </div>
             </motion.div>
