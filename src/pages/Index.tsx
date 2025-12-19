@@ -4,6 +4,7 @@ import CartDrawer from '@/components/CartDrawer';
 import HeroSection from '@/components/sections/HeroSection';
 import MissionSection from '@/components/sections/MissionSection';
 import FrameworkSection from '@/components/sections/FrameworkSection';
+import PlasticCrisisPreview from '@/components/sections/PlasticCrisisPreview';
 import TrackerSection from '@/components/sections/TrackerSection';
 import ImpactSection from '@/components/sections/ImpactSection';
 import JoinSection from '@/components/sections/JoinSection';
@@ -19,6 +20,7 @@ const Index = () => {
         <HeroSection />
         <MissionSection />
         <FrameworkSection />
+        <PlasticCrisisPreview />
         <TrackerSection />
         <ImpactSection />
         <JoinSection />

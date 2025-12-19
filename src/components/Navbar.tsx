@@ -7,6 +7,7 @@ import { useCart } from '@/contexts/CartContext';
 
 const navLinks = [
   { name: 'Mission', href: '/#mission' },
+  { name: 'Plastic Crisis', href: '/plastic-crisis-visualised' },
   { name: 'Impact', href: '/#impact' },
   { name: 'Join Us', href: '/#join' },
   { name: 'Shop', href: '/shop' },
