@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Heart, Leaf } from 'lucide-react';
-import heroImage from '@/assets/hero-runners.jpg';
+import heroImage from '@/assets/hero-globe.jpg';
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Three runners at sunrise in a misty forest" className="w-full h-full object-cover" />
+        <img src={heroImage} alt="Hand holding globe reaching toward another hand" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
       </div>
       {/* Decorative elements */}
