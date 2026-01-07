@@ -119,9 +119,7 @@ A world-first movement to protect India's fragile natural future.</motion.p>
               </a>
             </Button>
             <Button variant="hero-outline" size="lg" asChild>
-              <a href="#shop">
-                Shop Merch
-              </a>
+              
             </Button>
           </motion.div>
         </motion.div>
