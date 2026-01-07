@@ -5,77 +5,65 @@ import { Menu, X, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
 import logo from '@/assets/logo.jpg';
-
-const navLinks = [
-  { name: 'Mission', href: '/#mission' },
-  { name: 'Plastic Crisis', href: '/plastic-crisis-visualised' },
-  { name: 'Impact', href: '/#impact' },
-  { name: 'Join Us', href: '/#join' },
-  { name: 'Shop', href: '/shop' },
-  { name: 'Donate', href: '/#donate' },
-];
-
+const navLinks = [{
+  name: 'Mission',
+  href: '/#mission'
+}, {
+  name: 'Plastic Crisis',
+  href: '/plastic-crisis-visualised'
+}, {
+  name: 'Impact',
+  href: '/#impact'
+}, {
+  name: 'Join Us',
+  href: '/#join'
+}, {
+  name: 'Shop',
+  href: '/shop'
+}, {
+  name: 'Donate',
+  href: '/#donate'
+}];
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { totalItems, setIsCartOpen } = useCart();
+  const {
+    totalItems,
+    setIsCartOpen
+  } = useCart();
   const location = useLocation();
-
   const handleNavClick = (href: string) => {
     setIsOpen(false);
-    
+
     // Handle hash links
     if (href.startsWith('/#')) {
       const hash = href.replace('/', '');
       if (location.pathname === '/') {
         // Same page, just scroll
         const element = document.querySelector(hash);
-        element?.scrollIntoView({ behavior: 'smooth' });
+        element?.scrollIntoView({
+          behavior: 'smooth'
+        });
       }
     }
   };
-
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+  return <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <img 
-              src={logo} 
-              alt="PaperShoes Logo" 
-              className="h-10 w-auto rounded-lg"
-            />
+            <img src={logo} alt="PaperShoes Logo" className="h-10 w-auto rounded-lg" />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                onClick={() => handleNavClick(link.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
+            {navLinks.map(link => <Link key={link.name} to={link.href} onClick={() => handleNavClick(link.href)} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 {link.name}
-              </Link>
-            ))}
+              </Link>)}
           </div>
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="relative"
-              onClick={() => setIsCartOpen(true)}
-            >
-              <ShoppingBag className="w-5 h-5" />
-              {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-sage text-primary-foreground text-xs font-bold rounded-full flex items-center justify-center">
-                  {totalItems}
-                </span>
-              )}
-            </Button>
+            
             <Button variant="hero" size="sm" asChild>
               <a href="#donate">Donate</a>
             </Button>
@@ -83,24 +71,13 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="relative"
-              onClick={() => setIsCartOpen(true)}
-            >
+            <Button variant="ghost" size="icon" className="relative" onClick={() => setIsCartOpen(true)}>
               <ShoppingBag className="w-5 h-5" />
-              {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-sage text-primary-foreground text-xs font-bold rounded-full flex items-center justify-center">
+              {totalItems > 0 && <span className="absolute -top-1 -right-1 w-5 h-5 bg-sage text-primary-foreground text-xs font-bold rounded-full flex items-center justify-center">
                   {totalItems}
-                </span>
-              )}
+                </span>}
             </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
-            >
+            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
           </div>
@@ -108,37 +85,31 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden"
-            >
+          {isOpen && <motion.div initial={{
+          opacity: 0,
+          height: 0
+        }} animate={{
+          opacity: 1,
+          height: 'auto'
+        }} exit={{
+          opacity: 0,
+          height: 0
+        }} transition={{
+          duration: 0.3
+        }} className="md:hidden overflow-hidden">
               <div className="py-4 space-y-2">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    to={link.href}
-                    onClick={() => handleNavClick(link.href)}
-                    className="block px-4 py-3 text-foreground font-medium hover:bg-secondary rounded-xl transition-colors"
-                  >
+                {navLinks.map(link => <Link key={link.name} to={link.href} onClick={() => handleNavClick(link.href)} className="block px-4 py-3 text-foreground font-medium hover:bg-secondary rounded-xl transition-colors">
                     {link.name}
-                  </Link>
-                ))}
+                  </Link>)}
                 <div className="pt-2 px-4">
                   <Button variant="hero" className="w-full" asChild>
                     <a href="#donate">Donate Now</a>
                   </Button>
                 </div>
               </div>
-            </motion.div>
-          )}
+            </motion.div>}
         </AnimatePresence>
       </nav>
-    </header>
-  );
+    </header>;
 };
-
 export default Navbar;
