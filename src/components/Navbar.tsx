@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ShoppingBag, Leaf } from 'lucide-react';
+import { Menu, X, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
+import logo from '@/assets/logo.jpg';
 
 const navLinks = [
   { name: 'Mission', href: '/#mission' },
@@ -39,12 +40,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-sage rounded-xl flex items-center justify-center">
-              <Leaf className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold text-foreground">
-              PaperShoes
-            </span>
+            <img 
+              src={logo} 
+              alt="PaperShoes Logo" 
+              className="h-10 w-auto rounded-lg"
+            />
           </Link>
 
           {/* Desktop Navigation */}
