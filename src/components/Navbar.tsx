@@ -46,17 +46,17 @@ const Navbar = () => {
       }
     }
   };
-  return <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+  return <header className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-md border-b border-border">
       <nav className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="PaperShoes Logo" className="h-10 w-auto rounded-lg" />
+            <img src={logo} alt="PaperShoes Logo" className="h-14 md:h-16 w-auto rounded-lg" />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map(link => <Link key={link.name} to={link.href} onClick={() => handleNavClick(link.href)} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            {navLinks.map(link => <Link key={link.name} to={link.href} onClick={() => handleNavClick(link.href)} className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
                 {link.name}
               </Link>)}
           </div>
@@ -64,7 +64,7 @@ const Navbar = () => {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
             
-            <Button variant="hero" size="sm" asChild>
+            <Button variant="hero" size="default" asChild>
               <a href="#donate">Donate</a>
             </Button>
           </div>
@@ -72,8 +72,8 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
             
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="text-base">
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="h-12 w-12">
+              {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </Button>
           </div>
         </div>
