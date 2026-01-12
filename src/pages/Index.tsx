@@ -10,11 +10,9 @@ import ImpactSection from '@/components/sections/ImpactSection';
 import JoinSection from '@/components/sections/JoinSection';
 import ShopSection from '@/components/sections/ShopSection';
 import DonateSection from '@/components/sections/DonateSection';
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+  return <div className="min-h-screen bg-background">
+      <Navbar className="py-0 my-0" />
       <CartDrawer />
       <main>
         <HeroSection />
@@ -28,8 +26,6 @@ const Index = () => {
         <DonateSection />
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
