@@ -54,19 +54,7 @@ const HeroSection = () => {
         ease: "easeOut"
       }} className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <motion.div initial={{
-          opacity: 0,
-          scale: 0.9
-        }} animate={{
-          opacity: 1,
-          scale: 1
-        }} transition={{
-          duration: 0.5,
-          delay: 0.2
-        }} className="inline-flex items-center gap-2 px-4 py-2 bg-sage-light text-sage-dark rounded-full text-sm font-medium mb-8">
-            <Heart size={16} className="text-sage" />
-            <span>A World-First Movement</span>
-          </motion.div>
+          
 
           {/* Main Headline */}
           <motion.h1 initial={{
