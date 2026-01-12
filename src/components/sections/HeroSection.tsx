@@ -42,7 +42,7 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      <div className="container mx-auto px-6 py-20 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 py-[130px]">
         <motion.div initial={{
         opacity: 0,
         y: 30
