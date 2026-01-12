@@ -71,13 +71,8 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
-            <Button variant="ghost" size="icon" className="relative" onClick={() => setIsCartOpen(true)}>
-              <ShoppingBag className="w-5 h-5" />
-              {totalItems > 0 && <span className="absolute -top-1 -right-1 w-5 h-5 bg-sage text-primary-foreground text-xs font-bold rounded-full flex items-center justify-center">
-                  {totalItems}
-                </span>}
-            </Button>
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
+            
+            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="text-base">
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
           </div>
