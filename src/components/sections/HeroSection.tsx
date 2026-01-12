@@ -3,46 +3,15 @@ import { Button } from '@/components/ui/button';
 import { Heart } from 'lucide-react';
 import heroVideo from '@/assets/hero-video.mp4';
 const HeroSection = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex flex-col overflow-hidden pt-20">
       {/* Background Video */}
-      <div className="absolute inset-0">
+      <div className="flex-1 relative">
         <video src={heroVideo} autoPlay muted loop playsInline className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 py-[130px]">
+      {/* CTA Buttons at bottom */}
+      <div className="absolute bottom-24 left-0 right-0 z-10">
         <motion.div initial={{
-        opacity: 0,
-        y: 30
-      }} animate={{
-        opacity: 1,
-        y: 0
-      }} transition={{
-        duration: 0.8,
-        ease: "easeOut"
-      }} className="max-w-4xl mx-auto text-center">
-          {/* Main Headline */}
-          <motion.h1 initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8,
-          delay: 0.3
-        }} className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
-            
-            
-            
-            
-          </motion.h1>
-
-          {/* Subheadline */}
-          
-
-          {/* CTA Buttons */}
-          <motion.div initial={{
           opacity: 0,
           y: 20
         }} animate={{
@@ -52,16 +21,15 @@ const HeroSection = () => {
           duration: 0.8,
           delay: 0.7
         }} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="hero" size="lg" asChild>
-              <a href="#donate">
-                <Heart size={18} />
-                ​Support the Run   
-              </a>
-            </Button>
-            <Button variant="hero-outline" size="lg" asChild>
-              <a href="#mission">Learn More</a>
-            </Button>
-          </motion.div>
+          <Button variant="hero" size="lg" asChild>
+            <a href="#donate">
+              <Heart size={18} />
+              ​Support the Run   
+            </a>
+          </Button>
+          <Button variant="hero-outline" size="lg" asChild>
+            <a href="#mission">Learn More</a>
+          </Button>
         </motion.div>
       </div>
 
