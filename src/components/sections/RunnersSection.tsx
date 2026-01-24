@@ -39,7 +39,7 @@ const runners: Runner[] = [{
   name: 'Nagaraju Vallala',
   firstName: 'Nagaraju',
   country: 'India',
-  age: 25,
+  age: 35,
   image: runnerNagaraju,
   quote: 'Every step forward is a step toward change.',
   socials: {
