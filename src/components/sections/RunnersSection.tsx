@@ -184,7 +184,7 @@ const RunnersSection = () => {
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-4 text-popover-foreground">
             The Three Runners
           </h2>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-slate-950">3 Runners. 80 marathons. One Mission.</p>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-slate-950 text-center">Three Runners.  80 marathons.  One Mission.</p>
         </motion.div>
 
         {/* Desktop Layout - Three Cards */}
