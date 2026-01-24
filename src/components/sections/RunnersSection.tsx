@@ -53,7 +53,7 @@ const runners: Runner[] = [{
   name: 'Michael Boag',
   firstName: 'Michael',
   country: 'Australia',
-  age: 50,
+  age: 53,
   image: runnerMichael,
   quote: 'Age is just a number when you run for purpose.',
   socials: {
