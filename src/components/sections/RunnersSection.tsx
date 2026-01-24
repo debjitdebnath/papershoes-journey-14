@@ -181,7 +181,7 @@ const RunnersSection = () => {
       }} transition={{
         duration: 0.6
       }} className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-4 text-popover-foreground">
+          <h2 className="font-serif md:text-5xl lg:text-6xl mb-4 text-popover-foreground text-6xl">
             The Three Runners
           </h2>
           <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-slate-950 text-center">Three Runners.  80 marathons.  One Mission.</p>
