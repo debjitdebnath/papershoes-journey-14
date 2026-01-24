@@ -25,7 +25,7 @@ const runners: Runner[] = [{
   name: 'Matteo Aglioni',
   firstName: 'Matteo',
   country: 'Italy',
-  age: 28,
+  age: 25,
   image: runnerMatteo,
   quote: 'I am running because some journeys must be felt, not explained.',
   socials: {
@@ -39,7 +39,7 @@ const runners: Runner[] = [{
   name: 'Nagaraju Vallala',
   firstName: 'Nagaraju',
   country: 'India',
-  age: 35,
+  age: 25,
   image: runnerNagaraju,
   quote: 'Every step forward is a step toward change.',
   socials: {
@@ -53,7 +53,7 @@ const runners: Runner[] = [{
   name: 'Michael Boag',
   firstName: 'Michael',
   country: 'Australia',
-  age: 53,
+  age: 50,
   image: runnerMichael,
   quote: 'Age is just a number when you run for purpose.',
   socials: {
@@ -184,9 +184,7 @@ const RunnersSection = () => {
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-4 text-popover-foreground">
             The Three Runners
           </h2>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-slate-950">
-            Eighty days. Eighty marathons. One environmental awakening.
-          </p>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-slate-950">3 Runners. 80 marathons. One Mission.</p>
         </motion.div>
 
         {/* Desktop Layout - Three Cards */}
