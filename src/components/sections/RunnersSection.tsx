@@ -102,7 +102,7 @@ const RunnerCard = ({
 
       {/* Top Label */}
       <div className="absolute top-4 left-4 z-10">
-        <p className="text-cream/70 text-xs font-light tracking-widest uppercase">
+        <p className="text-xs font-light tracking-widest uppercase text-center text-secondary">
           {runner.country}
         </p>
       </div>
