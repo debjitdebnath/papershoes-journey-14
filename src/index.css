@@ -125,11 +125,13 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased text-lg;
     font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
   }
 }
 
