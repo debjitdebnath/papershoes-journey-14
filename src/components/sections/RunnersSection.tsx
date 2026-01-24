@@ -25,7 +25,7 @@ const runners: Runner[] = [{
   name: 'Matteo Aglioni',
   firstName: 'Matteo',
   country: 'Italy',
-  age: 25,
+  age: 28,
   image: runnerMatteo,
   quote: 'I am running because some journeys must be felt, not explained.',
   socials: {
@@ -39,7 +39,7 @@ const runners: Runner[] = [{
   name: 'Nagaraju Vallala',
   firstName: 'Nagaraju',
   country: 'India',
-  age: 25,
+  age: 35,
   image: runnerNagaraju,
   quote: 'Every step forward is a step toward change.',
   socials: {
@@ -53,7 +53,7 @@ const runners: Runner[] = [{
   name: 'Michael Boag',
   firstName: 'Michael',
   country: 'Australia',
-  age: 50,
+  age: 53,
   image: runnerMichael,
   quote: 'Age is just a number when you run for purpose.',
   socials: {
