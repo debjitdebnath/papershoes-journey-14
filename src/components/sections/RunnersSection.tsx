@@ -181,7 +181,7 @@ const RunnersSection = () => {
       }} transition={{
         duration: 0.6
       }} className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark rounded-full mb-4 text-3xl font-semibold font-serif">3 Runners</span>
+          <span className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark rounded-full mb-4 font-semibold font-serif text-4xl">3 Runners</span>
           <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-slate-950 text-center">80 marathons. One Mission.</p>
         </motion.div>
 
