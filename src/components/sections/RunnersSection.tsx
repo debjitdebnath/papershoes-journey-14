@@ -118,7 +118,7 @@ const RunnerCard = ({
         </div>
 
         {/* Quote */}
-        <motion.p className="text-cream/70 text-sm italic leading-relaxed mb-6 transition-opacity duration-300" animate={{
+        <motion.p className="text-cream/70 italic leading-relaxed mb-6 transition-opacity duration-300 text-base" animate={{
         opacity: isHovered ? 1 : 0.7
       }}>
           "{runner.quote}"
