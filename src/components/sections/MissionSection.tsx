@@ -38,8 +38,7 @@ const MissionSection = () => {
           }} className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark text-sm font-medium rounded-full mb-4">
               Our Purpose
             </motion.span>
-            <h2 className="md:text-5xl font-bold text-foreground mb-4 font-serif text-6xl">The Mission:
- From Symbolic Action to Systems Change</h2>
+            <h2 className="md:text-5xl font-bold text-foreground mb-4 font-serif text-4xl">The Mission: Combine long distance running with environmental action, in response to the plastic pollution crisis facing the planet.</h2>
           </div>
 
           {/* Mission Content */}
