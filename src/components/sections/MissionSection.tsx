@@ -57,7 +57,9 @@ const MissionSection = () => {
         }} className="bg-card p-8 md:p-12 shadow-card shadow-sm rounded-3xl">
             <div className="prose prose-lg max-w-none">
               <p className="text-lg md:text-xl leading-relaxed mb-6 text-center text-black bg-white">
-                Papershoes is an environmental awareness campaign running 80 marathons in 80 consecutive days across India to raise awareness about plastic waste and pollution. Using the marathon as a symbol of endurance and long-term responsibility, the campaign delivers a clear message: protecting our planet is a marathon, not a sprint. Through school visits, community runs, clean-ups, and storytelling, papershoes transforms physical challenge into shared purpose, inspiring awareness, behaviour change, and collective responsibility for the planet.<strong className="text-foreground"></strong> ​
+                Papershoes is an environmental awareness campaign running 80 marathons in 80 consecutive days across India to raise awareness about plastic waste and pollution. Using the marathon as a symbol of endurance and long-term responsibility, the campaign delivers a clear message: protecting our planet is a marathon, not a sprint. 
+
+Through school visits, community runs, clean-ups, and storytelling, papershoes transforms physical challenge into shared purpose, inspiring awareness, behaviour change, and collective responsibility for the planet.<strong className="text-foreground"></strong> ​
               </p>
 
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">​</p>
