@@ -35,10 +35,10 @@ const MissionSection = () => {
           }} transition={{
             duration: 0.5,
             delay: 0.2
-          }} className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark rounded-full mb-4 text-3xl font-semibold font-serif">
+          }} className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark rounded-full mb-4 font-semibold font-serif text-4xl">
               ​The Mission 
             </motion.span>
-            <h2 className="md:text-5xl text-foreground mb-4 font-serif text-4xl font-normal"> Combine long distance running with environmental action, in response to the plastic pollution crisis facing the planet.</h2>
+            <h2 className="md:text-5xl text-foreground mb-4 font-serif font-normal text-5xl"> Combine long distance running with environmental action, in response to the plastic pollution crisis.</h2>
           </div>
 
           {/* Mission Content */}
