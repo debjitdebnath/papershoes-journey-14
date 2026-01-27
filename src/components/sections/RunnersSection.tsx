@@ -27,7 +27,7 @@ const runners: Runner[] = [{
   country: 'Italy',
   age: 28,
   image: runnerMatteo,
-  quote: 'I am running because some journeys must be felt, not explained.',
+  quote: "I'm running because some journeys must be felt, not explained.",
   socials: {
     instagram: '#',
     linkedin: '#',
