@@ -110,7 +110,7 @@ const RunnerCard = ({
         {/* Name & Age */}
         <div className="mb-4">
           <h3 className="font-serif text-3xl text-cream mb-1">{runner.firstName}</h3>
-          <p className="text-cream/60 text-sm tracking-wide">
+          <p className="text-cream/60 text-sm tracking-wide font-bold">
             {runner.age} · {runner.country}
           </p>
         </div>
