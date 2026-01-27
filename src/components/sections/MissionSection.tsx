@@ -70,9 +70,7 @@ Through school visits, community runs, clean-ups, and storytelling, papershoes t
 
               <div className="mt-8 pt-8 border-t border-border">
                 <p className="text-foreground font-medium italic text-center text-3xl font-sans">
-                  "Nature is fragile.
-                  We are a part of it.
-                  And protecting it begins with changing ourselves.."
+                  "We run not to escape the world but to stay connected to it.."
                 </p>
               </div>
 
