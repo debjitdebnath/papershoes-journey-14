@@ -38,7 +38,7 @@ const MissionSection = () => {
           }} className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark text-sm font-medium rounded-full mb-4">
               Our Purpose
             </motion.span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+            <h2 className="md:text-5xl font-bold text-foreground mb-4 text-4xl">
               The Mission: Fragility, Courage & Responsibility
             </h2>
           </div>
