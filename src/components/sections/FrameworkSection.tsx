@@ -147,11 +147,11 @@ const FrameworkSection = () => {
             How the Pillars Work Together
           </h3>
 
-          <div className="flex flex-wrap justify-center gap-x-2 gap-y-3 mb-10">
-            {connectiveLogic.map((item, index) => <div key={item.pillar} className="flex items-center gap-2">
-                <span className="font-semibold text-foreground">{item.pillar}</span>
-                <span className="text-muted-foreground">{item.effect}</span>
-                {index < connectiveLogic.length - 1 && <span className="text-muted-foreground/50 mx-1">→</span>}
+          <div className="flex flex-col md:flex-row md:flex-wrap justify-center items-start md:items-center gap-3 md:gap-x-2 md:gap-y-3 mb-10">
+            {connectiveLogic.map((item, index) => <div key={item.pillar} className="flex items-center gap-2 w-full md:w-auto justify-center md:justify-start">
+                <span className="font-semibold text-foreground text-sm md:text-base">{item.pillar}</span>
+                <span className="text-muted-foreground text-sm md:text-base">{item.effect}</span>
+                {index < connectiveLogic.length - 1 && <span className="text-muted-foreground/50 mx-1 hidden md:inline">→</span>}
               </div>)}
           </div>
 
