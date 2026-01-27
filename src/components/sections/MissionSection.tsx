@@ -69,7 +69,7 @@ const MissionSection = () => {
               </p>
 
               <div className="mt-8 pt-8 border-t border-border">
-                <p className="text-lg text-foreground font-medium italic text-center">
+                <p className="text-foreground font-medium italic text-center text-3xl font-sans">
                   "Nature is fragile.
                   We are a part of it.
                   And protecting it begins with changing ourselves.."
