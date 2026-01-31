@@ -65,7 +65,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-4">
             
             <Button variant="hero" size="default" asChild>
-              <a href="#donate">Donate</a>
+              <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">Donate</a>
             </Button>
           </div>
 
@@ -98,7 +98,7 @@ const Navbar = () => {
                   </Link>)}
                 <div className="pt-4 px-5">
                   <Button variant="hero" className="w-full text-lg py-6" asChild>
-                    <a href="#donate">Donate Now</a>
+                    <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">Donate Now</a>
                   </Button>
                 </div>
               </div>

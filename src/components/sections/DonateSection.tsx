@@ -38,13 +38,17 @@ const DonateSection = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="hero" size="xl">
-                  <Heart className="w-5 h-5" />
-                  Donate Now
+                <Button variant="hero" size="xl" asChild>
+                  <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">
+                    <Heart className="w-5 h-5" />
+                    Donate Now
+                  </a>
                 </Button>
-                <Button variant="hero-outline" size="xl">
-                  <Calendar className="w-5 h-5" />
-                  Sponsor a Marathon Day
+                <Button variant="hero-outline" size="xl" asChild>
+                  <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">
+                    <Calendar className="w-5 h-5" />
+                    Sponsor a Marathon Day
+                  </a>
                 </Button>
               </div>
 
