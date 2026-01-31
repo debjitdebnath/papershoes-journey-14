@@ -45,7 +45,7 @@ const PlasticCrisisPreview = () => {
           </div>
 
           <Button variant="hero" size="lg" asChild>
-            <Link to="/plastic-crisis-visualised" className="inline-flex items-center gap-2">
+            <Link to="/plastic-crisis-visualised" onClick={() => window.scrollTo(0, 0)} className="inline-flex items-center gap-2">
               Learn More
               <ArrowRight className="w-4 h-4" />
             </Link>
