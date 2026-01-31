@@ -93,7 +93,7 @@ const Navbar = () => {
           duration: 0.3
         }} className="md:hidden overflow-hidden">
               <div className="py-6 space-y-3">
-                {navLinks.map(link => <Link key={link.name} to={link.href} onClick={() => handleNavClick(link.href)} className="block px-5 py-4 text-lg text-foreground font-medium hover:bg-secondary rounded-xl transition-colors">
+                {navLinks.map(link => <Link key={link.name} to={link.href} onClick={() => handleNavClick(link.href)} className="block px-5 py-4 text-foreground font-medium hover:bg-secondary rounded-xl transition-colors text-4xl font-sans">
                     {link.name}
                   </Link>)}
                 <div className="pt-4 px-5">
