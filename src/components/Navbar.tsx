@@ -73,7 +73,7 @@ const Navbar = () => {
           <div className="flex md:hidden items-center gap-2">
             
             <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="h-14 w-14 bg-white">
-              {isOpen ? <MoreVertical className="w-9 h-9 shadow-sm opacity-90" /> : <Menu className="w-9 h-9" />}
+              {isOpen ? <MoreVertical className="w-9 h-9 opacity-90 shadow-inner" /> : <Menu className="w-9 h-9" />}
             </Button>
           </div>
         </div>
