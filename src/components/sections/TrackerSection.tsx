@@ -3,6 +3,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { MapPin, Calendar, Users, Trash2, School } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 const TrackerSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -151,9 +152,11 @@ const TrackerSection = () => {
               </div>
             </div>
 
-            <Button variant="hero" className="w-full" size="lg">
-              <Calendar className="w-5 h-5" />
-              View Today's Marathon
+            <Button variant="hero" className="w-full" size="lg" asChild>
+              <Link to="/tracker" onClick={() => window.scrollTo(0, 0)}>
+                <Calendar className="w-5 h-5" />
+                View Today's Marathon
+              </Link>
             </Button>
           </motion.div>
         </div>
