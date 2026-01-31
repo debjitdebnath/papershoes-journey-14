@@ -21,6 +21,9 @@ const navLinks = [{
   name: 'Shop',
   href: '/shop'
 }, {
+  name: 'Blog',
+  href: '/blog'
+}, {
   name: 'Donate',
   href: '/#donate'
 }];
