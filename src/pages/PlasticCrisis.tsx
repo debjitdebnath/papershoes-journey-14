@@ -407,7 +407,7 @@ const PlasticCrisis = () => {
                 <h3 className="font-bold text-foreground mb-2">Support the Run</h3>
                 <p className="text-sm text-muted-foreground mb-6">Power 80 marathons in 80 days with your contribution.</p>
                 <Button variant="hero" asChild>
-                  <a href="/#donate">Donate Now</a>
+                  <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">Donate Now</a>
                 </Button>
               </div>
 
