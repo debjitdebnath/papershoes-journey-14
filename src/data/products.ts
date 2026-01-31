@@ -46,16 +46,6 @@ export const products: Product[] = [
     material: 'Recycled Nylon',
     category: 'Accessories',
   },
-  {
-    id: 'limited-print',
-    name: 'Limited Edition Print',
-    price: 799,
-    image: productPrint,
-    description: 'A stunning A2 art print capturing the spirit of the PaperShoes movement. Printed on FSC-certified paper with vegetable-based inks.',
-    impact: 'Funds toolkits & curricula',
-    material: 'A2 Poster',
-    category: 'Art',
-  },
 ];
 
 export const getProductById = (id: string): Product | undefined => {
