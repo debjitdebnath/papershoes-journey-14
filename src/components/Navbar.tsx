@@ -72,8 +72,8 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
             
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="h-12 w-12">
-              {isOpen ? <X className="h-[38px] w-[46px]" /> : <Menu className="w-7 h-7" />}
+            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="h-12 w-12 text-xl">
+              {isOpen ? <X className="w-[46px] px-0 py-0 my-[20px] mx-[29px] h-[41px]" /> : <Menu className="w-7 h-7" />}
             </Button>
           </div>
         </div>
