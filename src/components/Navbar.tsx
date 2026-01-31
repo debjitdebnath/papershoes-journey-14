@@ -72,8 +72,8 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
             
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="h-12 w-12 text-xl">
-              {isOpen ? <X className="w-[46px] px-0 py-0 my-[20px] mx-[29px] h-[41px]" /> : <Menu className="w-7 h-7" />}
+            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="h-14 w-14">
+              {isOpen ? <X className="w-9 h-9" /> : <Menu className="w-9 h-9" />}
             </Button>
           </div>
         </div>
@@ -92,12 +92,12 @@ const Navbar = () => {
         }} transition={{
           duration: 0.3
         }} className="md:hidden overflow-hidden">
-              <div className="py-4 space-y-2">
-                {navLinks.map(link => <Link key={link.name} to={link.href} onClick={() => handleNavClick(link.href)} className="block px-4 py-3 text-foreground font-medium hover:bg-secondary rounded-xl transition-colors">
+              <div className="py-6 space-y-3">
+                {navLinks.map(link => <Link key={link.name} to={link.href} onClick={() => handleNavClick(link.href)} className="block px-5 py-4 text-lg text-foreground font-medium hover:bg-secondary rounded-xl transition-colors">
                     {link.name}
                   </Link>)}
-                <div className="pt-2 px-4">
-                  <Button variant="hero" className="w-full" asChild>
+                <div className="pt-4 px-5">
+                  <Button variant="hero" className="w-full text-lg py-6" asChild>
                     <a href="#donate">Donate Now</a>
                   </Button>
                 </div>
