@@ -73,7 +73,7 @@ const Navbar = () => {
           <div className="flex md:hidden items-center gap-2">
             
             <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="h-12 w-12">
-              {isOpen ? <X className="w-[45px] h-[38px]" /> : <Menu className="w-7 h-7" />}
+              {isOpen ? <X className="h-[38px] w-[46px]" /> : <Menu className="w-7 h-7" />}
             </Button>
           </div>
         </div>
