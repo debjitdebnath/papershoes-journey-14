@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ShoppingBag } from 'lucide-react';
+import { Menu, ShoppingBag, MoreVertical } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
 import logo from '@/assets/logo.jpg';
@@ -48,7 +48,7 @@ const Navbar = () => {
   };
   return <header className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-md border-b border-border">
       <nav className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="flex items-center justify-between h-20 md:h-24 bg-white">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img src={logo} alt="PaperShoes Logo" className="h-14 md:h-16 w-auto rounded-full" />
@@ -72,8 +72,8 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
             
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="h-14 w-14">
-              {isOpen ? <X className="w-9 h-9" /> : <Menu className="w-9 h-9" />}
+            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="h-14 w-14 bg-white">
+              {isOpen ? <MoreVertical className="w-9 h-9 shadow-sm opacity-90" /> : <Menu className="w-9 h-9" />}
             </Button>
           </div>
         </div>
