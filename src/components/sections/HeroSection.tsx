@@ -8,22 +8,27 @@ const YOUTUBE_URL = 'https://youtu.be/7zzznw3fGyA?si=CQtJtK0Rhq7T6ZX6';
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen pt-20 bg-black text-white overflow-hidden">
-      {/* Background image */}
-      <picture>
-        <source media="(max-width: 768px)" srcSet={heroPortrait.url} />
+      {/* Mobile: image stacked on top so faces are visible */}
+      <div className="md:hidden relative w-full h-[55vh] min-h-[360px]">
         <img
-          src={heroLandscape.url}
+          src={heroPortrait.url}
           alt="Three Papershoes runners standing together at sunset across India"
-          className="absolute inset-0 w-full h-full object-cover object-top md:object-center"
+          className="absolute inset-0 w-full h-full object-cover object-top"
         />
-      </picture>
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-black" />
+      </div>
 
-      {/* Overlays for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 md:bg-none" />
+      {/* Desktop: full-bleed background image with side overlay */}
+      <img
+        src={heroLandscape.url}
+        alt=""
+        aria-hidden="true"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover object-center"
+      />
+      <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent" />
 
       {/* Content */}
-      <div className="relative container mx-auto px-6 pt-12 md:pt-20 pb-16">
+      <div className="relative container mx-auto px-6 pt-8 md:pt-20 pb-16">
         <div className="max-w-2xl">
           <h1 className="font-sans font-black uppercase leading-[0.95] tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
             <span className="block text-white">80 Marathons.</span>
