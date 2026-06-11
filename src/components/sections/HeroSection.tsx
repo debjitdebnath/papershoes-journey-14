@@ -45,25 +45,27 @@ const HeroSection = () => {
     offset: ['start start', 'end start'],
   });
 
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.3]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-[120vh] pt-20 bg-black text-white overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen pt-20 bg-black text-white overflow-hidden">
       {/* Background image with parallax */}
-      <motion.picture style={{ y: bgY }} className="absolute inset-0 w-full h-[120%]">
-        <source media="(max-width: 768px)" srcSet={heroPortrait.url} />
-        <img
-          src={heroLandscape.url}
-          alt="Three Papershoes runners standing together at sunset across India"
-          className="absolute inset-0 w-full h-full object-cover object-top md:object-center"
-        />
-      </motion.picture>
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.picture style={{ y: bgY }} className="block absolute inset-0 w-full h-[115%]">
+          <source media="(max-width: 768px)" srcSet={heroPortrait.url} />
+          <img
+            src={heroLandscape.url}
+            alt="Three Papershoes runners standing together at sunset across India"
+            className="w-full h-full object-cover object-top md:object-center"
+          />
+        </motion.picture>
+      </div>
 
       {/* Overlays for text legibility */}
       <motion.div
         style={{ opacity: overlayOpacity }}
-        className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent"
+        className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent pointer-events-none"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 md:bg-none" />
 
