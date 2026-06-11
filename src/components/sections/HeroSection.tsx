@@ -1,9 +1,9 @@
-import { Play, Heart, Footprints, Calendar, MapPin } from 'lucide-react';
+import { Play, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroLandscape from '@/assets/hero-team-landscape.png.asset.json';
 import heroPortrait from '@/assets/hero-team-portrait.png.asset.json';
 
-const YOUTUBE_URL = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+const YOUTUBE_URL = 'https://youtu.be/7zzznw3fGyA?si=CQtJtK0Rhq7T6ZX6';
 
 const HeroSection = () => {
   return (
@@ -14,16 +14,16 @@ const HeroSection = () => {
         <img
           src={heroLandscape.url}
           alt="Three Papershoes runners standing together at sunset across India"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-top md:object-center"
         />
       </picture>
 
       {/* Overlays for text legibility */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 md:bg-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 md:bg-none" />
 
       {/* Content */}
-      <div className="relative container mx-auto px-6 pt-12 md:pt-20 pb-40 md:pb-32">
+      <div className="relative container mx-auto px-6 pt-12 md:pt-20 pb-16">
         <div className="max-w-2xl">
           <h1 className="font-sans font-black uppercase leading-[0.95] tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
             <span className="block text-white">80 Marathons.</span>
@@ -57,10 +57,10 @@ const HeroSection = () => {
               href={YOUTUBE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 group"
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/20 transition-colors shadow-lg"
             >
-              <span className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-white/80 group-hover:bg-white/10 transition-colors">
-                <Play size={20} className="text-white fill-white ml-0.5" />
+              <span className="flex items-center justify-center w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm border border-white/40">
+                <Play size={16} className="text-white fill-white ml-0.5" />
               </span>
               <span className="font-bold uppercase tracking-wide text-white text-sm md:text-base">
                 Watch the Story
@@ -69,30 +69,8 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-
-      {/* Stats bar */}
-      <div className="absolute bottom-6 left-4 right-4 md:left-6 md:right-6">
-        <div className="container mx-auto">
-          <div className="bg-black/70 backdrop-blur-sm border border-white/10 rounded-2xl px-4 md:px-8 py-4 md:py-5 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-2">
-            <Stat icon={<Footprints className="text-[hsl(85,75%,55%)]" size={28} />} value="80" label="Marathons" />
-            <Stat icon={<Calendar className="text-[hsl(85,75%,55%)]" size={28} />} value="80" label="Days" />
-            <Stat icon={<MapPin className="text-[hsl(85,75%,55%)]" size={28} />} value="Across" label="India" />
-            <Stat icon={<Heart className="text-[hsl(85,75%,55%)]" size={28} />} value="Countless" label="Lives Impacted" />
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
-
-const Stat = ({ icon, value, label }: { icon: React.ReactNode; value: string; label: string }) => (
-  <div className="flex items-center gap-3">
-    <div className="shrink-0">{icon}</div>
-    <div className="leading-tight">
-      <div className="font-black text-white text-xl md:text-2xl uppercase">{value}</div>
-      <div className="text-white/70 text-xs md:text-sm uppercase tracking-wide">{label}</div>
-    </div>
-  </div>
-);
 
 export default HeroSection;
