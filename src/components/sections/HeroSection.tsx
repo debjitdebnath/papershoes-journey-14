@@ -34,7 +34,7 @@ const HeroSection = () => {
             >
               <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">
                 <Heart size={18} />
-                Donate
+                Support the Mission
               </a>
             </Button>
 
