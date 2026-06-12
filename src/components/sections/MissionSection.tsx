@@ -3,6 +3,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart } from 'lucide-react';
+import missionVideo from '@/assets/mission-walk.mp4.asset.json';
 const MissionSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -68,6 +69,17 @@ Through school visits, community runs, clean-ups, and storytelling, papershoes t
                 ​​​​
               </p>
 
+              <div className="mt-8 rounded-2xl overflow-hidden shadow-card">
+                <video
+                  src={missionVideo.url}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-auto block"
+                />
+              </div>
+
               <div className="mt-8 pt-8 border-t border-border">
                 <p className="text-foreground font-medium italic text-center text-3xl font-sans">
                   "We run not to escape the world but to stay connected to it.."
@@ -91,7 +103,7 @@ Through school visits, community runs, clean-ups, and storytelling, papershoes t
                 <Button variant="hero" size="lg" asChild>
                   <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">
                     <Heart size={18} />
-                    Support the Run
+                    Donate
                   </a>
                 </Button>
                 <Button variant="hero-outline" size="lg" asChild>
