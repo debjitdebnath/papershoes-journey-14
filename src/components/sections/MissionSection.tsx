@@ -3,6 +3,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart } from 'lucide-react';
+import missionVideo from '@/assets/mission-walk.mp4.asset.json';
 const MissionSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
