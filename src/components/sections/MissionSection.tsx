@@ -69,6 +69,17 @@ Through school visits, community runs, clean-ups, and storytelling, papershoes t
                 ​​​​
               </p>
 
+              <div className="mt-8 rounded-2xl overflow-hidden shadow-card">
+                <video
+                  src={missionVideo.url}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-auto block"
+                />
+              </div>
+
               <div className="mt-8 pt-8 border-t border-border">
                 <p className="text-foreground font-medium italic text-center text-3xl font-sans">
                   "We run not to escape the world but to stay connected to it.."
