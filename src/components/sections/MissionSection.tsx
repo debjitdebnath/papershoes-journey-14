@@ -103,7 +103,7 @@ Through school visits, community runs, clean-ups, and storytelling, papershoes t
                 <Button variant="hero" size="lg" asChild>
                   <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">
                     <Heart size={18} />
-                    Support the Run
+                    Donate
                   </a>
                 </Button>
                 <Button variant="hero-outline" size="lg" asChild>
