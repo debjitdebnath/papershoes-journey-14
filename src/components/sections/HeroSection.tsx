@@ -52,14 +52,16 @@ const HeroSection = () => {
     <section ref={sectionRef} className="relative min-h-screen pt-20 bg-black text-white overflow-hidden">
       {/* Background image with parallax */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.picture style={{ y: bgY }} className="block absolute inset-0 w-full h-[115%]">
-          <source media="(max-width: 768px)" srcSet={heroPortrait.url} />
-          <img
-            src={heroLandscape.url}
-            alt="Three Papershoes runners standing together at sunset across India"
-            className="w-full h-full object-cover object-top md:object-center"
-          />
-        </motion.picture>
+        <motion.div style={{ y: bgY }} className="absolute inset-0 w-full h-[115%]">
+          <picture className="block w-full h-full">
+            <source media="(max-width: 768px)" srcSet={heroPortrait.url} />
+            <img
+              src={heroLandscape.url}
+              alt="Three Papershoes runners standing together at sunset across India"
+              className="w-full h-full object-cover object-top md:object-center"
+            />
+          </picture>
+        </motion.div>
       </div>
 
       {/* Overlays for text legibility */}
