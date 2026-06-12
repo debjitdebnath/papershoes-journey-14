@@ -1,30 +1,11 @@
 import { Play, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroLandscape from '@/assets/hero-team-landscape.png.asset.json';
-import heroPortrait from '@/assets/hero-team-portrait.png.asset.json';
 
 const YOUTUBE_URL = 'https://youtu.be/7zzznw3fGyA?si=CQtJtK0Rhq7T6ZX6';
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen pt-20 bg-black text-white overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 w-full h-[115%]">
-          <picture className="block w-full h-full">
-            <source media="(max-width: 768px)" srcSet={heroPortrait.url} />
-            <img
-              src={heroLandscape.url}
-              alt="Three Papershoes runners standing together at sunset across India"
-              className="w-full h-full object-cover object-top md:object-center"
-            />
-          </picture>
-        </div>
-      </div>
-
-      {/* Overlays for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 md:bg-none" />
 
       {/* Content */}
       <div className="relative container mx-auto px-6 pt-12 md:pt-20 pb-16">
