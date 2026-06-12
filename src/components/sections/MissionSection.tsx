@@ -69,11 +69,10 @@ Through school visits, community runs, clean-ups, and storytelling, papershoes t
                 ​​​​
               </p>
 
-              <div className="mt-8 rounded-2xl overflow-hidden shadow-card">
+              <div className="mt-8 relative left-1/2 -translate-x-1/2 w-screen">
                 <video
                   src={missionVideo.url}
                   autoPlay
-                  muted
                   loop
                   playsInline
                   className="w-full h-auto block"
