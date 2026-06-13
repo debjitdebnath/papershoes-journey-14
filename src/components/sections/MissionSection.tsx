@@ -2,14 +2,27 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Heart, Volume2, VolumeX } from 'lucide-react';
+import { Heart, Volume2, VolumeX, Play, Pause } from 'lucide-react';
 import missionVideo from '@/assets/mission-walk.mp4.asset.json';
 const MissionSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
+
   useEffect(() => {
     if (videoRef.current) videoRef.current.muted = isMuted;
   }, [isMuted]);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+    setIsPlaying((p) => !p);
+  };
+
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -85,6 +98,14 @@ Through school visits, community runs, clean-ups, and storytelling, papershoes t
                   preload="auto"
                   className="w-full h-auto block bg-black"
                 />
+                <button
+                  type="button"
+                  onClick={togglePlay}
+                  aria-label={isPlaying ? 'Pause video' : 'Play video'}
+                  className="absolute bottom-4 left-4 bg-black/60 hover:bg-black/80 text-white rounded-full p-3 backdrop-blur-sm transition"
+                >
+                  {isPlaying ? <Pause size={20} /> : <Play size={20} />}
+                </button>
                 <button
                   type="button"
                   onClick={() => setIsMuted((m) => !m)}
