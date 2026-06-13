@@ -1,10 +1,15 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Heart } from 'lucide-react';
+import { Heart, Volume2, VolumeX } from 'lucide-react';
 import missionVideo from '@/assets/mission-walk.mp4.asset.json';
 const MissionSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+  useEffect(() => {
+    if (videoRef.current) videoRef.current.muted = isMuted;
+  }, [isMuted]);
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -71,12 +76,23 @@ Through school visits, community runs, clean-ups, and storytelling, papershoes t
 
               <div className="mt-8 relative left-1/2 -translate-x-1/2 w-screen">
                 <video
+                  ref={videoRef}
                   src={missionVideo.url}
                   autoPlay
                   loop
+                  muted
                   playsInline
-                  className="w-full h-auto block"
+                  preload="auto"
+                  className="w-full h-auto block bg-black"
                 />
+                <button
+                  type="button"
+                  onClick={() => setIsMuted((m) => !m)}
+                  aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+                  className="absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-white rounded-full p-3 backdrop-blur-sm transition"
+                >
+                  {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+                </button>
               </div>
 
               <div className="mt-8 pt-8 border-t border-border">
