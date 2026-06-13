@@ -100,6 +100,14 @@ Through school visits, community runs, clean-ups, and storytelling, papershoes t
                 />
                 <button
                   type="button"
+                  onClick={togglePlay}
+                  aria-label={isPlaying ? 'Pause video' : 'Play video'}
+                  className="absolute bottom-4 left-4 bg-black/60 hover:bg-black/80 text-white rounded-full p-3 backdrop-blur-sm transition"
+                >
+                  {isPlaying ? <Pause size={20} /> : <Play size={20} />}
+                </button>
+                <button
+                  type="button"
                   onClick={() => setIsMuted((m) => !m)}
                   aria-label={isMuted ? 'Unmute video' : 'Mute video'}
                   className="absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-white rounded-full p-3 backdrop-blur-sm transition"
