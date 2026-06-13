@@ -7,9 +7,22 @@ import missionVideo from '@/assets/mission-walk.mp4.asset.json';
 const MissionSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
+
   useEffect(() => {
     if (videoRef.current) videoRef.current.muted = isMuted;
   }, [isMuted]);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+    setIsPlaying((p) => !p);
+  };
+
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
