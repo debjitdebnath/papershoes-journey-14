@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Heart, Volume2, VolumeX } from 'lucide-react';
+import { Heart, Volume2, VolumeX, Play, Pause } from 'lucide-react';
 import missionVideo from '@/assets/mission-walk.mp4.asset.json';
 const MissionSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
