@@ -74,27 +74,18 @@ const RunnerCard = ({
   runner,
   index
 }: RunnerCardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-  return <motion.article initial={{
-    opacity: 0,
-    y: 40
-  }} whileInView={{
-    opacity: 1,
-    y: 0
-  }} viewport={{
-    once: true,
-    margin: '-50px'
-  }} transition={{
-    duration: 0.6,
-    delay: index * 0.15
-  }} className="relative w-full max-w-[340px] h-[520px] rounded-lg overflow-hidden group cursor-pointer" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} role="article" aria-label={`Profile of ${runner.name}, ${runner.age} years old from ${runner.country}`}>
+  return <motion.article
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: '-50px' }}
+    transition={{ duration: 0.4, delay: index * 0.1 }}
+    className="relative w-full max-w-[340px] h-[520px] rounded-lg overflow-hidden group cursor-pointer"
+    role="article"
+    aria-label={`Profile of ${runner.name}, ${runner.age} years old from ${runner.country}`}
+  >
       {/* Background Image */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.img src={runner.image} alt={`Portrait of ${runner.name}`} className="w-full h-full object-cover object-top filter grayscale-[30%] transition-all duration-500" animate={{
-        scale: isHovered ? 1.03 : 1
-      }} transition={{
-        duration: 0.5
-      }} />
+        <img src={runner.image} alt={`Portrait of ${runner.name}`} className="w-full h-full object-cover object-top filter grayscale-[30%] transition-transform duration-500 group-hover:scale-[1.03]" />
       </div>
 
       {/* Gradient Overlay */}
@@ -116,11 +107,10 @@ const RunnerCard = ({
         </div>
 
         {/* Quote */}
-        <motion.p className="text-cream/70 italic leading-relaxed mb-6 transition-opacity duration-300 text-base" animate={{
-        opacity: isHovered ? 1 : 0.7
-      }}>
+        <p className="text-cream/70 italic leading-relaxed mb-6 text-base">
           "{runner.quote}"
-        </motion.p>
+        </p>
+
 
         {/* Social Icons */}
         <motion.div className="flex items-center gap-4" initial={{
