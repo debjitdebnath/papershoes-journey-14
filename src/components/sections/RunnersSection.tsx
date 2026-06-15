@@ -113,17 +113,7 @@ const RunnerCard = ({
 
 
         {/* Social Icons */}
-        <motion.div className="flex items-center gap-4" initial={{
-        opacity: 0
-      }} animate={{
-        opacity: isHovered ? 1 : 0
-      }} transition={{
-        duration: 0.3
-      }}
-      // Always visible on touch devices
-      style={{
-        opacity: 'var(--social-opacity, 0)'
-      }}>
+        <div className="flex items-center gap-4" style={{ opacity: 'var(--social-opacity, 0)', transition: 'opacity 0.3s' }}>
           {runner.socials.instagram && <a href={runner.socials.instagram} className="text-cream/60 hover:text-terracotta transition-colors duration-200 p-2 -m-2" aria-label={`${runner.name}'s Instagram`} target="_blank" rel="noopener noreferrer">
               <Instagram className="w-5 h-5" />
             </a>}
@@ -139,7 +129,8 @@ const RunnerCard = ({
           {runner.socials.phone && <a href={`tel:${runner.socials.phone}`} className="text-cream/60 hover:text-terracotta transition-colors duration-200 p-2 -m-2" aria-label={`Call ${runner.name}`}>
               <Phone className="w-5 h-5" />
             </a>}
-        </motion.div>
+        </div>
+
       </div>
 
       {/* Hover lift effect */}
