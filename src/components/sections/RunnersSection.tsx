@@ -165,50 +165,100 @@ const RunnerCard = ({
 };
 const RunnersSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
+  const scrollToIndex = (index: number) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const child = el.children[index] as HTMLElement | undefined;
+    if (child) {
+      el.scrollTo({ left: child.offsetLeft - el.offsetLeft, behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const onScroll = () => {
+      const cardWidth = el.scrollWidth / runners.length;
+      const idx = Math.round(el.scrollLeft / cardWidth);
+      setActiveIndex(Math.max(0, Math.min(runners.length - 1, idx)));
+    };
+    el.addEventListener('scroll', onScroll, { passive: true });
+    return () => el.removeEventListener('scroll', onScroll);
+  }, []);
+
   return <section className="bg-earth-900 py-20 md:py-28 overflow-hidden" id="runners">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.6
-      }} className="text-center mb-16">
+        <div className="text-center mb-16">
           <div className="flex flex-col items-center gap-3">
             <span className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark rounded-full font-semibold font-serif text-4xl">3 Runners</span>
             <span className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark rounded-full font-semibold font-serif text-4xl">80 Marathons</span>
             <span className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark rounded-full font-semibold font-serif text-4xl">One Mission</span>
           </div>
-        </motion.div>
+        </div>
 
         {/* Desktop Layout - Three Cards */}
         <div className="hidden md:flex justify-center items-center gap-8 lg:gap-12">
-          {runners.map((runner, index) => <motion.div key={runner.id} whileHover={{
-          y: -8
-        }} transition={{
-          duration: 0.3
-        }}>
+          {runners.map((runner, index) => <div key={runner.id} className="transition-transform duration-300 hover:-translate-y-2">
               <RunnerCard runner={runner} index={index} />
-            </motion.div>)}
+            </div>)}
         </div>
 
         {/* Mobile Layout - Swipeable Carousel */}
         <div className="md:hidden">
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-4 px-4 scrollbar-hide">
-            {runners.map((runner, index) => <div key={runner.id} className="snap-center flex-shrink-0 w-[85%] max-w-[340px]" onTouchStart={() => setActiveIndex(index)}>
+          <div
+            ref={scrollerRef}
+            className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-4 px-4 scrollbar-hide"
+          >
+            {runners.map((runner, index) => <div key={runner.id} className="snap-center flex-shrink-0 w-[85%] max-w-[340px]">
                 <RunnerCard runner={runner} index={index} />
               </div>)}
           </div>
 
-          {/* Pagination Dots */}
-          <div className="flex justify-center gap-2 mt-6">
-            {runners.map((_, index) => <button key={index} className={`w-2 h-2 rounded-full transition-all duration-300 ${activeIndex === index ? 'bg-terracotta w-6' : 'bg-cream/30'}`} onClick={() => setActiveIndex(index)} aria-label={`Go to runner ${index + 1}`} />)}
+          {/* Arrows + Pagination */}
+          <div className="flex items-center justify-center gap-4 mt-6">
+            <button
+              type="button"
+              onClick={() => scrollToIndex(Math.max(0, activeIndex - 1))}
+              disabled={activeIndex === 0}
+              aria-label="Previous runner"
+              className="p-2 rounded-full border border-cream/40 text-cream/80 disabled:opacity-30 transition-colors hover:bg-cream/10"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+
+            <div className="flex items-center gap-2">
+              {runners.map((_, index) => {
+                const active = activeIndex === index;
+                return (
+                  <button
+                    key={index}
+                    onClick={() => scrollToIndex(index)}
+                    aria-label={`Go to runner ${index + 1}`}
+                    className={`h-2.5 rounded-full border transition-all duration-300 ${
+                      active
+                        ? 'w-6 bg-terracotta border-terracotta'
+                        : 'w-2.5 bg-transparent border-cream/70'
+                    }`}
+                  />
+                );
+              })}
+            </div>
+
+            <button
+              type="button"
+              onClick={() => scrollToIndex(Math.min(runners.length - 1, activeIndex + 1))}
+              disabled={activeIndex === runners.length - 1}
+              aria-label="Next runner"
+              className="p-2 rounded-full border border-cream/40 text-cream/80 disabled:opacity-30 transition-colors hover:bg-cream/10"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
           </div>
+
+          <p className="text-center text-cream/50 text-xs mt-3">Swipe or tap arrows · {activeIndex + 1} of {runners.length}</p>
         </div>
       </div>
 
