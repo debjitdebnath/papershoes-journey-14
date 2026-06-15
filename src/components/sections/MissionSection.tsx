@@ -1,27 +1,21 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { Heart, Volume2, VolumeX, Play, Pause } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import missionVideo from '@/assets/mission-walk.mp4.asset.json';
 const MissionSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMuted, setIsMuted] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
-    if (videoRef.current) videoRef.current.muted = isMuted;
-  }, [isMuted]);
+    const video = videoRef.current;
+    if (!video) return;
 
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying((p) => !p);
-  };
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.play().catch(() => undefined);
+  }, []);
 
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -87,33 +81,19 @@ Through school visits, community runs, clean-ups, and storytelling, papershoes t
                 ​​​​
               </p>
 
-              <div className="mt-8 relative left-1/2 -translate-x-1/2 w-screen">
+              <div className="mt-8 relative overflow-hidden rounded-2xl bg-black aspect-video">
                 <video
                   ref={videoRef}
                   src={missionVideo.url}
                   autoPlay
                   loop
                   muted
+                  defaultMuted
                   playsInline
                   preload="auto"
-                  className="w-full h-auto block bg-black"
+                  aria-label="Papershoes mission walk video"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
-                <button
-                  type="button"
-                  onClick={togglePlay}
-                  aria-label={isPlaying ? 'Pause video' : 'Play video'}
-                  className="absolute bottom-4 left-4 bg-black/60 hover:bg-black/80 text-white rounded-full p-3 backdrop-blur-sm transition"
-                >
-                  {isPlaying ? <Pause size={20} /> : <Play size={20} />}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setIsMuted((m) => !m)}
-                  aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-                  className="absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-white rounded-full p-3 backdrop-blur-sm transition"
-                >
-                  {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-                </button>
               </div>
 
               <div className="mt-8 pt-8 border-t border-border">
