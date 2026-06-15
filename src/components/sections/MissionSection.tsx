@@ -88,7 +88,6 @@ Through school visits, community runs, clean-ups, and storytelling, papershoes t
                   autoPlay
                   loop
                   muted
-                  defaultMuted
                   playsInline
                   preload="auto"
                   aria-label="Papershoes mission walk video"
