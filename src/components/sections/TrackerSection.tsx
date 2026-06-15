@@ -47,7 +47,7 @@ const TrackerSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Map Placeholder */}
+          {/* Route Animation Video */}
           <motion.div initial={{
           opacity: 0,
           x: -30
@@ -61,32 +61,17 @@ const TrackerSection = () => {
           duration: 0.6,
           delay: 0.2
         }} className="bg-card rounded-2xl overflow-hidden shadow-card">
-            <div className="aspect-square md:aspect-[4/3] bg-beige-warm flex items-center justify-center relative">
-              {/* Map placeholder with stylized India outline */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-3/4 h-3/4 bg-sage/10 rounded-3xl flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-16 h-16 text-sage mx-auto mb-4" />
-                    <p className="text-lg font-medium text-muted-foreground">
-                      Live Map Coming Soon
-                    </p>
-                    <p className="text-sm text-muted-foreground/70 mt-2">
-                      Interactive tracking of the 80-marathon journey
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Route dots decoration */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-sage rounded-full animate-pulse" />
-                <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-sage rounded-full animate-pulse" style={{
-                animationDelay: '0.5s'
-              }} />
-                <div className="absolute bottom-1/3 right-1/3 w-3 h-3 bg-sage/60 rounded-full animate-pulse" style={{
-                animationDelay: '1s'
-              }} />
-              </div>
+            <div className="aspect-square md:aspect-[4/3] bg-black flex items-center justify-center relative">
+              <video
+                src="/__l5e/assets-v1/a2746c6d-657c-4f6a-905b-354a84f12231/follow-the-run.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                className="w-full h-full object-cover"
+                aria-label="Route animation showing the 80 marathon journey across India"
+              />
             </div>
           </motion.div>
 
