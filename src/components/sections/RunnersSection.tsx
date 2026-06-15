@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Instagram, Linkedin, Mail, Phone } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
 import runnerMatteo from '@/assets/runner-matteo.jpg';
 import runnerNagaraju from '@/assets/runner-nagaraju.jpg';
 import runnerMichael from '@/assets/runner-michael.jpg';
