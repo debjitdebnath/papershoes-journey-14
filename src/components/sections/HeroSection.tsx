@@ -1,11 +1,21 @@
 import { Play, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import heroBg from '@/assets/hero-bg.jpg.asset.json';
 
 const YOUTUBE_URL = 'https://youtu.be/7zzznw3fGyA?si=CQtJtK0Rhq7T6ZX6';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen pt-20 bg-black text-white overflow-hidden">
+    <section className="relative min-h-screen pt-20 text-white overflow-hidden">
+      {/* Background image */}
+      <img
+        src={heroBg.url}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+        aria-hidden="true"
+      />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
 
       {/* Content */}
       <div className="relative container mx-auto px-6 pt-12 md:pt-20 pb-16">
