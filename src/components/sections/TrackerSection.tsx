@@ -94,7 +94,7 @@ const TrackerSection = () => {
             <p className="text-primary-foreground/85 max-w-xl mx-auto mb-7">
               Dates, zones, routes and marathon counts for all 32 stops — laid out as an interactive timeline.
             </p>
-            <Button variant="hero-outline" size="lg" asChild>
+            <Button size="lg" asChild className="bg-cream text-foreground hover:bg-cream/90 rounded-xl shadow-card">
               <Link to="/route-plan" onClick={() => window.scrollTo(0, 0)}>
                 View Final Route Plan
                 <ArrowRight className="w-5 h-5" />
