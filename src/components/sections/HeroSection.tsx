@@ -8,7 +8,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen pt-20 text-white overflow-hidden">
       {/* Background image */}
       <img
-        src={heroBg.url}
+        src="/hero-bg.jpg"
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
         aria-hidden="true"
