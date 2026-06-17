@@ -1,27 +1,16 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart } from 'lucide-react';
-import missionVideo from '@/assets/mission-walk.mp4.asset.json';
+
 const MissionSection = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.muted = true;
-    video.defaultMuted = true;
-    video.playsInline = true;
-    video.play().catch(() => undefined);
-  }, []);
-
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
     margin: "-100px"
   });
+
   return <section id="mission" className="py-24 bg-background" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div initial={{
