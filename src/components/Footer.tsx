@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Leaf, Mail, Instagram, Twitter, Youtube, Facebook } from 'lucide-react';
+import { Leaf, Mail, Instagram, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 
@@ -32,17 +32,11 @@ const Footer = () => {
               A world-first movement to protect India's fragile natural future.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 bg-beige/10 rounded-xl flex items-center justify-center hover:bg-sage transition-colors">
+              <a href="https://www.instagram.com/papershoes80?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-beige/10 rounded-xl flex items-center justify-center hover:bg-sage transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-beige/10 rounded-xl flex items-center justify-center hover:bg-sage transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-beige/10 rounded-xl flex items-center justify-center hover:bg-sage transition-colors">
+              <a href="https://youtu.be/7zzznw3fGyA?si=uBOQBGm3TPmavd2e" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-beige/10 rounded-xl flex items-center justify-center hover:bg-sage transition-colors">
                 <Youtube className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-beige/10 rounded-xl flex items-center justify-center hover:bg-sage transition-colors">
-                <Facebook className="w-5 h-5" />
               </a>
             </div>
           </div>
