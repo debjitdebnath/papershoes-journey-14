@@ -71,16 +71,11 @@ Through school visits, community runs, clean-ups, and storytelling, papershoes t
               </p>
 
               <div className="mt-8 relative overflow-hidden rounded-2xl bg-black aspect-video">
-                <video
-                  ref={videoRef}
-                  src={missionVideo.url}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  aria-label="Papershoes mission walk video"
+                <img
+                  src="/mission-team.jpg"
+                  alt="Papershoes team - Matteo, Nagaraju, and Michael"
                   className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
 
