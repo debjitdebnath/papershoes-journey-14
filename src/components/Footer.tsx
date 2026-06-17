@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Leaf, Mail, Instagram, Twitter, Youtube, Facebook } from 'lucide-react';
+import { Leaf, Mail, Instagram, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 
