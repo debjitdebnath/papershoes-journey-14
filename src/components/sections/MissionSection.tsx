@@ -70,14 +70,8 @@ Through school visits, community runs, clean-ups, and storytelling, papershoes t
                 ​​​​
               </p>
 
-              <div className="mt-8 relative overflow-hidden rounded-2xl bg-black aspect-video">
-                <img
-                  src="/mission-team.jpg"
-                  alt="Papershoes team - Matteo, Nagaraju, and Michael"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
+
+
 
               <div className="mt-8 pt-8 border-t border-border">
                 <p className="text-foreground font-medium italic text-center text-3xl font-sans">

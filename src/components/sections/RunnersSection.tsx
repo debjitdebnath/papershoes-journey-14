@@ -1,158 +1,68 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
-import runnerMatteo from '@/assets/runner-matteo.jpg';
-import runnerNagaraju from '@/assets/runner-nagaraju.jpg';
-import runnerMichael from '@/assets/runner-michael.jpg';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import matteo1 from '@/assets/matteo-1.png.asset.json';
+import matteo2 from '@/assets/matteo-2.jpg.asset.json';
+import nagaraju1 from '@/assets/nagaraju-1.jpg.asset.json';
+import michael1 from '@/assets/michael-1.jpg.asset.json';
+import michael2 from '@/assets/michael-2.jpg.asset.json';
+import michael3 from '@/assets/michael-3.jpg.asset.json';
+
 interface Runner {
   id: string;
   name: string;
-  firstName: string;
-  country: string;
   age: number;
-  image: string;
-  quote: string;
-  socials: {
-    instagram?: string;
-    linkedin?: string;
-    x?: string;
-    email?: string;
-    phone?: string;
-  };
+  location: string;
+  bio: string;
+  images: { src: string; alt: string }[];
 }
-const runners: Runner[] = [{
-  id: 'matteo',
-  name: 'Matteo Aglioni',
-  firstName: 'Matteo',
-  country: 'Italy',
-  age: 28,
-  image: runnerMatteo,
-  quote: "I'm running because some journeys must be felt, not explained.",
-  socials: {
-    instagram: '#',
-    linkedin: '#',
-    email: 'matteo@papershoes.org',
-    phone: '#'
-  }
-}, {
-  id: 'nagaraju',
-  name: 'Nagaraju Vallala',
-  firstName: 'Nagaraju',
-  country: 'India',
-  age: 35,
-  image: runnerNagaraju,
-  quote: 'Every step forward is a step toward change.',
-  socials: {
-    instagram: '#',
-    linkedin: '#',
-    email: 'nagaraju@papershoes.org',
-    phone: '#'
-  }
-}, {
-  id: 'michael',
-  name: 'Michael Boag',
-  firstName: 'Michael',
-  country: 'Australia',
-  age: 53,
-  image: runnerMichael,
-  quote: 'Age is just a number when you run for purpose.',
-  socials: {
-    instagram: '#',
-    linkedin: '#',
-    email: 'michael@papershoes.org',
-    phone: '#'
-  }
-}];
-const XIcon = () => <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>;
-interface RunnerCardProps {
-  runner: Runner;
-  index: number;
-}
-const RunnerCard = ({
-  runner,
-  index
-}: RunnerCardProps) => {
-  return <motion.article
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: '-50px' }}
-    transition={{ duration: 0.4, delay: index * 0.1 }}
-    className="relative w-full max-w-[340px] h-[520px] rounded-lg overflow-hidden group cursor-pointer"
-    role="article"
-    aria-label={`Profile of ${runner.name}, ${runner.age} years old from ${runner.country}`}
-  >
-      {/* Background Image */}
-      <div className="absolute inset-0 overflow-hidden">
-        <img src={runner.image} alt={`Portrait of ${runner.name}`} className="w-full h-full object-cover object-top filter grayscale-[30%] transition-transform duration-500 group-hover:scale-[1.03]" />
-      </div>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+const runners: Runner[] = [
+  {
+    id: 'nagaraju',
+    name: 'Nagaraju Vallala',
+    age: 35,
+    location: 'Warangal, Telangana, India',
+    bio: 'Nagaraju is an adventure tour guide in the Himalayas with a deep passion for nature, wellness, and community. He joins the Papershoes 80 Marathons in 80 Days – Plastic Free Challenge to help educate children about plastic pollution while promoting health, resilience, and a better future for the next generation.',
+    images: [
+      { src: nagaraju1.url, alt: 'Nagaraju holding a crumpled plastic bottle' },
+    ],
+  },
+  {
+    id: 'matteo',
+    name: 'Matteo Aglioni',
+    age: 28,
+    location: 'Como, Italy',
+    bio: 'Matteo is a personal trainer, avid hiker, rock climber, and passionate nature lover. Inspired by the beauty of the natural world and a love for adventure, he is joining the Papershoes challenge to help protect Mother Nature, promote fitness, and raise awareness about the growing health impacts of plastic pollution.',
+    images: [
+      { src: matteo1.url, alt: 'Matteo holding a plastic bottle in front of Italian mountains' },
+      { src: matteo2.url, alt: 'Matteo at a trail race start line' },
+    ],
+  },
+  {
+    id: 'michael',
+    name: 'Michael Boag',
+    age: 53,
+    location: 'Byron Bay, Australia',
+    bio: 'Michael is a sustainability consultant and men\'s mental health mentor. He initiated the Papershoes campaign to promote sustainable living, inspire environmental responsibility, and honour the memory of his two best friends who are no longer here.',
+    images: [
+      { src: michael1.url, alt: 'Michael wearing a Papershoes shirt in a field near Byron Bay' },
+      { src: michael2.url, alt: 'Michael smiling with a glass bottle at sunset in the Australian countryside' },
+      { src: michael3.url, alt: 'Michael holding up a discarded plastic bag against the sky' },
+    ],
+  },
+];
 
-      {/* Top Label */}
-      <div className="absolute top-4 left-4 z-10">
-        
-      </div>
-
-      {/* Content */}
-      <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-        {/* Name & Age */}
-        <div className="mb-4">
-          <h3 className="font-serif text-3xl text-cream mb-1">{runner.firstName}</h3>
-          <p className="text-cream/60 text-sm tracking-wide font-bold">
-            {runner.age} · {runner.country}
-          </p>
-        </div>
-
-        {/* Quote */}
-        <p className="text-cream/70 italic leading-relaxed mb-6 text-base">
-          "{runner.quote}"
-        </p>
-
-
-        {/* Social Icons */}
-        <div className="flex items-center gap-4" style={{ opacity: 'var(--social-opacity, 0)', transition: 'opacity 0.3s' }}>
-          {runner.socials.instagram && <a href={runner.socials.instagram} className="text-cream/60 hover:text-terracotta transition-colors duration-200 p-2 -m-2" aria-label={`${runner.name}'s Instagram`} target="_blank" rel="noopener noreferrer">
-              <Instagram className="w-5 h-5" />
-            </a>}
-          <a href="#" className="text-cream/60 hover:text-terracotta transition-colors duration-200 p-2 -m-2" aria-label={`${runner.name}'s X (Twitter)`} target="_blank" rel="noopener noreferrer">
-            <XIcon />
-          </a>
-          {runner.socials.linkedin && <a href={runner.socials.linkedin} className="text-cream/60 hover:text-terracotta transition-colors duration-200 p-2 -m-2" aria-label={`${runner.name}'s LinkedIn`} target="_blank" rel="noopener noreferrer">
-              <Linkedin className="w-5 h-5" />
-            </a>}
-          {runner.socials.email && <a href={`mailto:${runner.socials.email}`} className="text-cream/60 hover:text-terracotta transition-colors duration-200 p-2 -m-2" aria-label={`Email ${runner.name}`}>
-              <Mail className="w-5 h-5" />
-            </a>}
-          {runner.socials.phone && <a href={`tel:${runner.socials.phone}`} className="text-cream/60 hover:text-terracotta transition-colors duration-200 p-2 -m-2" aria-label={`Call ${runner.name}`}>
-              <Phone className="w-5 h-5" />
-            </a>}
-        </div>
-
-      </div>
-
-      {/* Hover lift effect */}
-      <style>{`
-        @media (hover: none) {
-          .group { --social-opacity: 1 !important; }
-        }
-        @media (hover: hover) {
-          .group:hover { --social-opacity: 1; }
-        }
-      `}</style>
-    </motion.article>;
-};
-const RunnersSection = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+const RunnerCarousel = ({ images, name }: { images: Runner['images']; name: string }) => {
+  const [index, setIndex] = useState(0);
   const scrollerRef = useRef<HTMLDivElement>(null);
 
-  const scrollToIndex = (index: number) => {
+  const goTo = (i: number) => {
+    const clamped = Math.max(0, Math.min(images.length - 1, i));
+    setIndex(clamped);
     const el = scrollerRef.current;
-    if (!el) return;
-    const child = el.children[index] as HTMLElement | undefined;
-    if (child) {
+    const child = el?.children[clamped] as HTMLElement | undefined;
+    if (el && child) {
       el.scrollTo({ left: child.offsetLeft - el.offsetLeft, behavior: 'smooth' });
     }
   };
@@ -161,98 +71,147 @@ const RunnersSection = () => {
     const el = scrollerRef.current;
     if (!el) return;
     const onScroll = () => {
-      const cardWidth = el.scrollWidth / runners.length;
-      const idx = Math.round(el.scrollLeft / cardWidth);
-      setActiveIndex(Math.max(0, Math.min(runners.length - 1, idx)));
+      const w = el.scrollWidth / images.length;
+      const i = Math.round(el.scrollLeft / w);
+      setIndex(Math.max(0, Math.min(images.length - 1, i)));
     };
     el.addEventListener('scroll', onScroll, { passive: true });
     return () => el.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [images.length]);
 
-  return <section className="bg-earth-900 py-20 md:py-28 overflow-hidden" id="runners">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="flex flex-col items-center gap-3">
-            <span className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark rounded-full font-semibold font-serif text-4xl">3 Runners</span>
-            <span className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark rounded-full font-semibold font-serif text-4xl">80 Marathons</span>
-            <span className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark rounded-full font-semibold font-serif text-4xl">One Mission</span>
+  return (
+    <div className="relative group">
+      <div
+        ref={scrollerRef}
+        className="flex overflow-x-auto snap-x snap-mandatory rounded-2xl md:rounded-3xl bg-earth-900/5 scrollbar-hide aspect-[4/5] md:aspect-[16/10]"
+      >
+        {images.map((img, i) => (
+          <div key={i} className="snap-center flex-shrink-0 w-full h-full">
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              className="w-full h-full object-cover"
+              draggable={false}
+            />
           </div>
-        </div>
+        ))}
+      </div>
 
-        {/* Desktop Layout - Three Cards */}
-        <div className="hidden md:flex justify-center items-center gap-8 lg:gap-12">
-          {runners.map((runner, index) => <div key={runner.id} className="transition-transform duration-300 hover:-translate-y-2">
-              <RunnerCard runner={runner} index={index} />
-            </div>)}
-        </div>
-
-        {/* Mobile Layout - Swipeable Carousel */}
-        <div className="md:hidden">
-          <div
-            ref={scrollerRef}
-            className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-4 px-4 scrollbar-hide"
+      {images.length > 1 && (
+        <>
+          {/* Desktop arrows */}
+          <button
+            type="button"
+            onClick={() => goTo(index - 1)}
+            disabled={index === 0}
+            aria-label={`Previous photo of ${name}`}
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 items-center justify-center rounded-full bg-cream/90 text-earth-900 shadow-md opacity-0 group-hover:opacity-100 transition-opacity disabled:opacity-0 hover:bg-cream"
           >
-            {runners.map((runner, index) => <div key={runner.id} className="snap-center flex-shrink-0 w-[85%] max-w-[340px]">
-                <RunnerCard runner={runner} index={index} />
-              </div>)}
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            type="button"
+            onClick={() => goTo(index + 1)}
+            disabled={index === images.length - 1}
+            aria-label={`Next photo of ${name}`}
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 items-center justify-center rounded-full bg-cream/90 text-earth-900 shadow-md opacity-0 group-hover:opacity-100 transition-opacity disabled:opacity-0 hover:bg-cream"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
+          {/* Dots */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                aria-label={`Go to photo ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i === index ? 'w-6 bg-cream' : 'w-1.5 bg-cream/60'
+                }`}
+              />
+            ))}
           </div>
+        </>
+      )}
+    </div>
+  );
+};
 
-          {/* Arrows + Pagination */}
-          <div className="flex items-center justify-center gap-4 mt-6">
-            <button
-              type="button"
-              onClick={() => scrollToIndex(Math.max(0, activeIndex - 1))}
-              disabled={activeIndex === 0}
-              aria-label="Previous runner"
-              className="p-2 rounded-full border border-cream/40 text-cream/80 disabled:opacity-30 transition-colors hover:bg-cream/10"
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
+const RunnerProfile = ({ runner, index }: { runner: Runner; index: number }) => {
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
+      className="max-w-3xl mx-auto"
+      aria-labelledby={`runner-${runner.id}-name`}
+    >
+      <RunnerCarousel images={runner.images} name={runner.name} />
 
-            <div className="flex items-center gap-2">
-              {runners.map((_, index) => {
-                const active = activeIndex === index;
-                return (
-                  <button
-                    key={index}
-                    onClick={() => scrollToIndex(index)}
-                    aria-label={`Go to runner ${index + 1}`}
-                    className={`h-2.5 rounded-full border transition-all duration-300 ${
-                      active
-                        ? 'w-6 bg-terracotta border-terracotta'
-                        : 'w-2.5 bg-transparent border-cream/70'
-                    }`}
-                  />
-                );
-              })}
-            </div>
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
+        className="mt-8 md:mt-10"
+      >
+        <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-3">
+          Runner 0{index + 1}
+        </p>
+        <h3
+          id={`runner-${runner.id}-name`}
+          className="font-serif text-4xl md:text-5xl text-foreground leading-tight mb-3"
+        >
+          {runner.name}
+        </h3>
+        <p className="text-base md:text-lg text-muted-foreground mb-6">
+          Age {runner.age} · {runner.location}
+        </p>
+        <p className="text-lg md:text-xl text-foreground/85 leading-relaxed max-w-2xl">
+          {runner.bio}
+        </p>
+      </motion.div>
+    </motion.article>
+  );
+};
 
-            <button
-              type="button"
-              onClick={() => scrollToIndex(Math.min(runners.length - 1, activeIndex + 1))}
-              disabled={activeIndex === runners.length - 1}
-              aria-label="Next runner"
-              className="p-2 rounded-full border border-cream/40 text-cream/80 disabled:opacity-30 transition-colors hover:bg-cream/10"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
+const RunnersSection = () => {
+  return (
+    <section id="runners" className="bg-background py-20 md:py-32">
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-center mb-20 md:mb-28"
+        >
+          <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground mb-4">
+            Meet the Runners
+          </p>
+          <h2 className="font-serif text-4xl md:text-6xl text-foreground leading-tight">
+            Three runners. 80 marathons. One mission.
+          </h2>
+        </motion.div>
 
-          <p className="text-center text-cream/50 text-xs mt-3">Swipe or tap arrows · {activeIndex + 1} of {runners.length}</p>
+        {/* Vertical stack of runner profiles */}
+        <div className="space-y-24 md:space-y-40">
+          {runners.map((runner, i) => (
+            <RunnerProfile key={runner.id} runner={runner} index={i} />
+          ))}
         </div>
       </div>
 
-      {/* Hide scrollbar for mobile carousel */}
       <style>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
-    </section>;
+    </section>
+  );
 };
+
 export default RunnersSection;
