@@ -1,4 +1,7 @@
 import { motion } from 'framer-motion';
+import matteo2 from '@/assets/matteo-2.jpg.asset.json';
+import nagaraju1 from '@/assets/nagaraju-1.jpg.asset.json';
+import michael1 from '@/assets/michael-1.jpg.asset.json';
 
 interface Runner {
   id: string;
@@ -17,7 +20,7 @@ const runners: Runner[] = [
     age: 35,
     location: 'Warangal, India',
     bio: 'Adventure guide in the Himalayas. Runs to educate children on plastic pollution and inspire resilience.',
-    image: '/mission-team.jpg',
+    image: nagaraju1.url,
     alt: 'Nagaraju holding a crumpled plastic bottle',
   },
   {
@@ -26,7 +29,7 @@ const runners: Runner[] = [
     age: 28,
     location: 'Como, Italy',
     bio: 'Personal trainer and climber. Runs to protect Mother Nature and raise awareness of plastic\'s health impact.',
-    image: '/mission-team.jpg',
+    image: matteo2.url,
     alt: 'Matteo holding a plastic bottle in the Italian mountains',
   },
   {
@@ -35,7 +38,7 @@ const runners: Runner[] = [
     age: 53,
     location: 'Byron Bay, Australia',
     bio: 'Sustainability consultant and mentor. Initiator of Papershoes, running in memory of two lost friends.',
-    image: '/mission-team.jpg',
+    image: michael1.url,
     alt: 'Michael in a Papershoes shirt near Byron Bay',
   },
 ];
