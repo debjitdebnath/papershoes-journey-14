@@ -56,55 +56,30 @@ const MissionSection = () => {
         }} transition={{
           duration: 0.8,
           delay: 0.3
-        }} className="bg-card p-8 md:p-12 shadow-card shadow-sm rounded-3xl">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg md:text-xl leading-relaxed mb-6 text-center text-black bg-white">
-                Papershoes is an environmental awareness campaign running 80 marathons in 80 consecutive days across India to raise awareness about plastic waste and pollution. Using the marathon as a symbol of endurance and long-term responsibility, the campaign delivers a clear message: protecting our planet is a marathon, not a sprint. 
+          }} className="bg-card p-8 md:p-12 shadow-card shadow-sm rounded-3xl">
+            <p className="text-lg md:text-xl leading-relaxed text-center text-foreground">
+              80 marathons in 80 days across India — turning endurance into environmental action against plastic pollution through school visits, community runs, and clean-ups.
+            </p>
 
-Through school visits, community runs, clean-ups, and storytelling, papershoes transforms physical challenge into shared purpose, inspiring awareness, behaviour change, and collective responsibility for the planet.<strong className="text-foreground"></strong> ​
+            <div className="mt-8 pt-8 border-t border-border">
+              <p className="text-foreground font-medium italic text-center text-2xl md:text-3xl font-sans">
+                "We run not to escape the world but to stay connected to it."
               </p>
-
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">​</p>
-
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6 text-center">
-                ​​​​
-              </p>
-
-
-
-
-              <div className="mt-8 pt-8 border-t border-border">
-                <p className="text-foreground font-medium italic text-center text-3xl font-sans">
-                  "We run not to escape the world but to stay connected to it.."
-                </p>
-              </div>
-
-              {/* CTA Buttons */}
-              <motion.div initial={{
-              opacity: 0,
-              y: 20
-            }} animate={isInView ? {
-              opacity: 1,
-              y: 0
-            } : {
-              opacity: 0,
-              y: 20
-            }} transition={{
-              duration: 0.8,
-              delay: 0.5
-            }} className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-10">
-                <Button variant="hero" size="lg" asChild>
-                  <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">
-                    <Heart size={18} />
-                    Donate
-                  </a>
-                </Button>
-                <Button variant="hero-outline" size="lg" asChild>
-                  <a href="#framework">Learn More</a>
-                </Button>
-              </motion.div>
             </div>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.8, delay: 0.5 }} className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-10">
+              <Button variant="hero" size="lg" asChild>
+                <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">
+                  <Heart size={18} />
+                  Donate
+                </a>
+              </Button>
+              <Button variant="hero-outline" size="lg" asChild>
+                <a href="#framework">Learn More</a>
+              </Button>
+            </motion.div>
           </motion.div>
+
         </motion.div>
       </div>
     </section>;
