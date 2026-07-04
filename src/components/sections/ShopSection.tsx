@@ -13,24 +13,25 @@ const ShopSection = () => {
   const { addToCart } = useCart();
 
   return (
-    <section id="shop" className="py-24 bg-background" ref={ref}>
+    <section id="shop" className="py-16 md:py-20 bg-background" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <span className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark text-sm font-medium rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark text-sm font-medium rounded-full mb-3">
             Support the Cause
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
             Shop for Impact
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Every purchase directly funds our environmental education and community action programs.
+          <p className="text-base text-muted-foreground">
+            Every purchase funds education and community action.
           </p>
         </motion.div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
           {products.map((product, index) => (

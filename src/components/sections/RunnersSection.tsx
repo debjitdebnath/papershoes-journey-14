@@ -45,22 +45,23 @@ const runners: Runner[] = [
 
 const RunnersSection = () => {
   return (
-    <section id="runners" className="bg-background py-20 md:py-28">
+    <section id="runners" className="bg-background py-16 md:py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-center mb-14 md:mb-20"
+          className="max-w-3xl mx-auto text-center mb-10 md:mb-14"
         >
-          <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground mb-4">
+          <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground mb-3">
             Meet the Runners
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-tight">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground leading-tight">
             Three runners. 80 marathons. One mission.
           </h2>
         </motion.div>
+
 
         <div className="grid gap-10 md:gap-8 md:grid-cols-3 max-w-6xl mx-auto">
           {runners.map((runner, i) => (

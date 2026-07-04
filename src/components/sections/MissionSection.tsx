@@ -1,87 +1,47 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart } from 'lucide-react';
 
 const MissionSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: true,
-    margin: "-100px"
-  });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  return <section id="mission" className="py-24 bg-background" ref={ref}>
+  return (
+    <section id="mission" className="py-16 md:py-20 bg-background" ref={ref}>
       <div className="container mx-auto px-6">
-        <motion.div initial={{
-        opacity: 0,
-        y: 40
-      }} animate={isInView ? {
-        opacity: 1,
-        y: 0
-      } : {
-        opacity: 0,
-        y: 40
-      }} transition={{
-        duration: 0.8,
-        ease: "easeOut"
-      }} className="max-w-4xl mx-auto">
-          {/* Section Title */}
-          <div className="text-center mb-16">
-            <motion.span initial={{
-            opacity: 0
-          }} animate={isInView ? {
-            opacity: 1
-          } : {
-            opacity: 0
-          }} transition={{
-            duration: 0.5,
-            delay: 0.2
-          }} className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark rounded-full mb-4 font-semibold font-serif text-4xl">
-              ​The Mission 
-            </motion.span>
-            <h2 className="md:text-5xl text-foreground mb-4 font-serif font-normal text-5xl"> Combine long distance running with environmental action, in response to the plastic pollution crisis.</h2>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-3xl mx-auto text-center"
+        >
+          <span className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark rounded-full mb-5 font-semibold text-sm tracking-wide">
+            The Mission
+          </span>
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6 leading-tight">
+            Combine long-distance running with environmental action against plastic pollution.
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
+            80 marathons in 80 days across India — turning endurance into action through school visits, community runs, and clean-ups.
+          </p>
+          <p className="font-serif italic text-xl md:text-2xl text-foreground/90 mb-8">
+            "We run not to escape the world but to stay connected to it."
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Button variant="hero" size="lg" asChild>
+              <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">
+                <Heart size={18} /> Donate
+              </a>
+            </Button>
+            <Button variant="hero-outline" size="lg" asChild>
+              <a href="#framework">Learn More</a>
+            </Button>
           </div>
-
-          {/* Mission Content */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} animate={isInView ? {
-          opacity: 1,
-          y: 0
-        } : {
-          opacity: 0,
-          y: 30
-        }} transition={{
-          duration: 0.8,
-          delay: 0.3
-          }} className="bg-card p-8 md:p-12 shadow-card shadow-sm rounded-3xl">
-            <p className="text-lg md:text-xl leading-relaxed text-center text-foreground">
-              80 marathons in 80 days across India — turning endurance into environmental action against plastic pollution through school visits, community runs, and clean-ups.
-            </p>
-
-            <div className="mt-8 pt-8 border-t border-border">
-              <p className="text-foreground font-medium italic text-center text-2xl md:text-3xl font-sans">
-                "We run not to escape the world but to stay connected to it."
-              </p>
-            </div>
-
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.8, delay: 0.5 }} className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-10">
-              <Button variant="hero" size="lg" asChild>
-                <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">
-                  <Heart size={18} />
-                  Donate
-                </a>
-              </Button>
-              <Button variant="hero-outline" size="lg" asChild>
-                <a href="#framework">Learn More</a>
-              </Button>
-            </motion.div>
-          </motion.div>
-
         </motion.div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default MissionSection;
