@@ -2,6 +2,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart } from 'lucide-react';
+import campaignRouteMap from '@/assets/campaign-route-map.png.asset.json';
 
 const MissionSection = () => {
   const ref = useRef(null);
@@ -25,6 +26,22 @@ const MissionSection = () => {
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
             80 marathons in 80 days across India — turning endurance into action through school visits, community runs, and clean-ups.
           </p>
+
+          <div className="relative mx-auto max-w-2xl mb-10">
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-sage/30 via-terracotta/20 to-earth/30 blur-sm" />
+            <figure className="relative overflow-hidden rounded-2xl border-4 border-cream bg-cream shadow-xl">
+              <img
+                src={campaignRouteMap.url}
+                alt="Paper Shoes 80 campaign route across India — 80 marathons through mountains, coastlines, and cities"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <figcaption className="px-4 py-3 text-center text-xs md:text-sm text-muted-foreground font-medium bg-cream">
+                The 80-day route across India
+              </figcaption>
+            </figure>
+          </div>
+
           <p className="font-serif italic text-xl md:text-2xl text-foreground/90 mb-8">
             "We run not to escape the world but to stay connected to it."
           </p>
