@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "sdk_version": "0.20.0",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "paper-shoes-80-mcp",
+      "version": "0.1.0",
+      "title": "Paper Shoes 80 MCP"
+    },
+    "tools": [
+      {
+        "name": "get_campaign_overview",
+        "title": "Get Campaign Overview",
+        "description": "Returns a high-level overview of the Paper Shoes 80 campaign — 80 marathons in 80 days across India to fight plastic pollution.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_runners",
+        "title": "Get Runners",
+        "description": "Returns the runners taking part in the Paper Shoes 80 campaign.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_five_pillars",
+        "title": "Get Five Pillars of Change",
+        "description": "Returns the campaign's Five Pillars of Change framework. Optionally filter by pillar name.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "pillar": {
+              "description": "Optional pillar name to filter (case-insensitive substring match).",
+              "type": "string"
+            }
+          }
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
