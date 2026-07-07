@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart } from 'lucide-react';
-import campaignRouteMap from '@/assets/campaign-route-map.jpg.asset.json';
+import campaignRouteMap from '@/assets/campaign-route-map-v2.jpg.asset.json';
 
 const MissionSection = () => {
   const ref = useRef(null);

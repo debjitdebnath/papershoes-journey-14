@@ -97,31 +97,32 @@ const PlasticCrisis = () => {
       
       <main className="pt-20">
         {/* SECTION 1 — GLOBAL OVERVIEW (DATA HERO) */}
-        <section className="py-16 md:py-24 bg-earth text-primary-foreground relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-earth via-brown to-earth opacity-90" />
+        <section className="py-20 md:py-28 bg-black text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(232,93,58,0.15),transparent_60%),radial-gradient(ellipse_at_bottom_left,rgba(74,168,120,0.12),transparent_55%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-950 to-black" />
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-12">
               <motion.span 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="inline-block px-4 py-1.5 bg-primary-foreground/10 text-primary-foreground text-sm font-medium rounded-full mb-4"
+                className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/15 text-white text-sm font-medium rounded-full mb-5 backdrop-blur-sm"
               >
-                Data Dashboard
+                <span className="w-1.5 h-1.5 rounded-full bg-orange animate-pulse" /> Live Data Dashboard
               </motion.span>
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-4xl md:text-6xl font-bold mb-4"
+                className="text-4xl md:text-6xl font-bold mb-5 tracking-tight"
               >
-                The Plastic Crisis, Visualised
+                The Plastic Crisis,<br /><span className="bg-gradient-to-r from-orange to-terracotta bg-clip-text text-transparent">Visualised</span>
               </motion.h1>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-lg text-primary-foreground/80 max-w-2xl mx-auto"
+                className="text-lg text-white/70 max-w-2xl mx-auto"
               >
                 Understanding the scale of the problem is the first step toward solving it.
               </motion.p>
@@ -134,16 +135,16 @@ const PlasticCrisis = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12"
             >
-              <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-primary-foreground/20">
-                <p className="text-sm text-primary-foreground/70 mb-2">Plastic produced this year</p>
-                <div className="text-4xl md:text-5xl font-bold">
-                  <AnimatedCounter end={380} suffix="M" /> <span className="text-xl">tonnes</span>
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10 hover:border-orange/40 transition-colors">
+                <p className="text-sm text-white/60 mb-2 uppercase tracking-wider">Plastic produced this year</p>
+                <div className="text-4xl md:text-5xl font-bold text-orange">
+                  <AnimatedCounter end={380} suffix="M" /> <span className="text-xl text-white/80">tonnes</span>
                 </div>
               </div>
-              <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-primary-foreground/20">
-                <p className="text-sm text-primary-foreground/70 mb-2">Plastic entering oceans this year</p>
-                <div className="text-4xl md:text-5xl font-bold">
-                  <AnimatedCounter end={11} suffix="M" /> <span className="text-xl">tonnes</span>
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10 hover:border-terracotta/40 transition-colors">
+                <p className="text-sm text-white/60 mb-2 uppercase tracking-wider">Plastic entering oceans this year</p>
+                <div className="text-4xl md:text-5xl font-bold text-terracotta">
+                  <AnimatedCounter end={11} suffix="M" /> <span className="text-xl text-white/80">tonnes</span>
                 </div>
               </div>
             </motion.div>
@@ -153,28 +154,20 @@ const PlasticCrisis = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto"
+              className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto"
             >
-              <div className="text-center p-4">
-                <Globe className="w-8 h-8 mx-auto mb-2 text-terracotta" />
-                <div className="text-2xl md:text-3xl font-bold">400M+</div>
-                <p className="text-xs text-primary-foreground/70">tonnes/year</p>
-              </div>
-              <div className="text-center p-4">
-                <Recycle className="w-8 h-8 mx-auto mb-2 text-terracotta" />
-                <div className="text-2xl md:text-3xl font-bold">9%</div>
-                <p className="text-xs text-primary-foreground/70">recycled</p>
-              </div>
-              <div className="text-center p-4">
-                <Droplets className="w-8 h-8 mx-auto mb-2 text-terracotta" />
-                <div className="text-2xl md:text-3xl font-bold">11M</div>
-                <p className="text-xs text-primary-foreground/70">tonnes to oceans</p>
-              </div>
-              <div className="text-center p-4">
-                <Clock className="w-8 h-8 mx-auto mb-2 text-terracotta" />
-                <div className="text-2xl md:text-3xl font-bold">0</div>
-                <p className="text-xs text-primary-foreground/70">natural degradation</p>
-              </div>
+              {[
+                { icon: Globe, value: '400M+', label: 'tonnes/year' },
+                { icon: Recycle, value: '9%', label: 'recycled' },
+                { icon: Droplets, value: '11M', label: 'tonnes to oceans' },
+                { icon: Clock, value: '∞', label: 'natural degradation' },
+              ].map((s) => (
+                <div key={s.label} className="text-center p-5 rounded-xl bg-white/[0.03] border border-white/10 hover:bg-white/[0.06] transition-colors">
+                  <s.icon className="w-7 h-7 mx-auto mb-2 text-orange" />
+                  <div className="text-2xl md:text-3xl font-bold">{s.value}</div>
+                  <p className="text-xs text-white/60 mt-1">{s.label}</p>
+                </div>
+              ))}
             </motion.div>
           </div>
         </section>
@@ -367,7 +360,7 @@ const PlasticCrisis = () => {
         </Section>
 
         {/* SECTION 8 — IMPACT DASHBOARD SNAPSHOT */}
-        <Section className="py-16 md:py-24 bg-earth text-primary-foreground">
+        <Section className="py-16 md:py-24 bg-black text-white">
           <div className="container mx-auto px-6">
             <h2 className="text-2xl md:text-4xl font-bold mb-12 text-center">
               Impact Dashboard
@@ -379,12 +372,12 @@ const PlasticCrisis = () => {
                 { icon: Palette, label: 'Cultural', stats: ['200+ art installations', '50 school programs', '10 community murals'] },
                 { icon: Newspaper, label: 'Narrative', stats: ['500+ media mentions', '2M social reach', '50 documentary hours'] },
               ].map((card) => (
-                <div key={card.label} className="bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 rounded-2xl p-6">
-                  <card.icon className="w-8 h-8 text-terracotta mb-4" />
+                <div key={card.label} className="bg-white/[0.04] backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-orange/40 transition-colors">
+                  <card.icon className="w-8 h-8 text-orange mb-4" />
                   <h3 className="font-bold mb-3">{card.label}</h3>
                   <ul className="space-y-2">
                     {card.stats.map((stat) => (
-                      <li key={stat} className="text-sm text-primary-foreground/80">{stat}</li>
+                      <li key={stat} className="text-sm text-white/70">{stat}</li>
                     ))}
                   </ul>
                 </div>
