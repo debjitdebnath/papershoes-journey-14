@@ -2,7 +2,6 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart } from 'lucide-react';
-import campaignRouteMap from '@/assets/campaign-route-map-v2.jpg.asset.json';
 
 const MissionSection = () => {
   const ref = useRef(null);
@@ -31,7 +30,7 @@ const MissionSection = () => {
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-sage/30 via-terracotta/20 to-earth/30 blur-sm" />
             <figure className="relative overflow-hidden rounded-2xl border-4 border-cream bg-cream shadow-xl">
               <img
-                src={campaignRouteMap.url}
+                src="/campaign-route-map.jpg"
                 alt="Paper Shoes 80 campaign route across India — 80 marathons through mountains, coastlines, and cities"
                 className="w-full h-auto object-cover"
                 loading="lazy"
@@ -45,6 +44,26 @@ const MissionSection = () => {
           <p className="font-serif italic text-xl md:text-2xl text-foreground/90 mb-8">
             "We run not to escape the world but to stay connected to it."
           </p>
+
+          <div className="mx-auto mb-10 max-w-3xl text-left">
+            <div className="mb-3 flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-wide text-terracotta">
+              <span className="h-2 w-2 rounded-full bg-terracotta" />
+              Documentary teaser
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-xl">
+              <div className="aspect-video">
+                <iframe
+                  className="h-full w-full"
+                  src="https://www.youtube.com/embed/7zzznw3fGyA?rel=0&modestbranding=1"
+                  title="Paper Shoes documentary teaser"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button variant="hero" size="lg" asChild>
               <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">
