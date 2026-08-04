@@ -20,7 +20,7 @@ const RouteMapSVG = () => {
   return (
     <div ref={ref} className="relative w-full">
       <svg
-        viewBox="16 14 42 76"
+        viewBox="8 8 60 96"
         className="w-full h-auto max-h-[560px] mx-auto"
         role="img"
         aria-label="Animated map of the PaperShoes route from Ahmedabad to Mumbai"
