@@ -20,19 +20,13 @@ const RouteMapSVG = () => {
   return (
     <div ref={ref} className="relative w-full">
       <svg
-        viewBox="0 0 60 110"
+        viewBox="16 14 42 76"
         className="w-full h-auto max-h-[560px] mx-auto"
         role="img"
         aria-label="Animated map of the PaperShoes route from Ahmedabad to Mumbai"
       >
-        <defs>
-          <marker id="routeArrow" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">
-            <path d="M0,0 L4,2 L0,4 Z" fill="hsl(var(--terracotta))" opacity="0.8" />
-          </marker>
-        </defs>
-
         {/* faded full path */}
-        <path d={path} fill="none" stroke="hsl(var(--muted-foreground))" strokeWidth="0.5" opacity="0.18" />
+        <path d={path} fill="none" stroke="hsl(var(--muted-foreground))" strokeWidth="0.6" opacity="0.2" />
 
         {/* animated route drawing with direction arrows */}
         <motion.path
@@ -41,7 +35,6 @@ const RouteMapSVG = () => {
           stroke="hsl(var(--terracotta))"
           strokeWidth="0.7"
           strokeLinecap="round"
-          markerMid="url(#routeArrow)"
           initial={{ pathLength: 0 }}
           animate={isInView ? { pathLength: 1 } : { pathLength: 0 }}
           transition={{ duration: 2.4, ease: 'easeInOut' }}
