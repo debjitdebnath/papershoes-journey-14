@@ -5,10 +5,10 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const hooks = [
-  { icon: Flag, title: '80 Marathons', line: 'One a day.', accent: 'bg-sage-light text-sage-dark' },
-  { icon: MapPin, title: '32 Stops', line: 'Sabarmati → Arabian Sea.', accent: 'bg-terracotta/10 text-terracotta' },
-  { icon: RouteIcon, title: 'Coast·River·Hill', line: 'Every plastic reality.', accent: 'bg-beige text-foreground' },
-  { icon: Calendar, title: 'Oct 1 → Dec 20', line: 'Ahmedabad → Mumbai.', accent: 'bg-sage-light text-sage-dark' },
+  { icon: Flag, title: '80 Marathons', line: 'One a day, for 80 days.', accent: 'bg-sage-light text-sage-dark' },
+  { icon: MapPin, title: '12 Cities', line: 'Ahmedabad → Mumbai.', accent: 'bg-terracotta/10 text-terracotta' },
+  { icon: RouteIcon, title: 'Source to Sea', line: 'Rivers, cities, coastline.', accent: 'bg-beige text-foreground' },
+  { icon: Calendar, title: '3,376 km', line: 'Oct 1 → Dec 19, 8+ states.', accent: 'bg-sage-light text-sage-dark' },
 ];
 
 const TrackerSection = () => {
@@ -28,8 +28,11 @@ const TrackerSection = () => {
             Follow the Run
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Every City. Every Step. Mapped.
+            From Source to Sea.
           </h2>
+          <p className="text-muted-foreground mt-3">
+            Following plastic on its own journey — from inland cities, down India&apos;s rivers, to the coastline.
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 max-w-6xl mx-auto mb-8">
