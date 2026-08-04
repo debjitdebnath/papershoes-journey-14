@@ -11,6 +11,7 @@ import Checkout from "./pages/Checkout";
 import PlasticCrisis from "./pages/PlasticCrisis";
 import Blog from "./pages/Blog";
 import RoutePlan from "./pages/RoutePlan";
+import CityStory from "./pages/CityStory";
 import FivePillars from "./pages/FivePillars";
 import NotFound from "./pages/NotFound";
 
