@@ -238,8 +238,8 @@ export const routeStops: RouteStop[] = [
     marathons: 5,
     theme: 'Waste Management Success',
     chapter: 'Cities That Can Change',
-    x: 30,
-    y: 56,
+    x: 34,
+    y: 50,
     story:
       'Proof that it works. India’s cleanest city shows what segregation, collection and civic pride can do at scale.',
     impact: 'Learning exchange documenting a replicable municipal model.',
