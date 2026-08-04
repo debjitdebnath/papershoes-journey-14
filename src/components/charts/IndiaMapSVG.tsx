@@ -38,7 +38,7 @@ const IndiaMapSVG = () => {
         
         {/* Route path */}
         <motion.path
-          d="M77 28 L80 26 L83 25 L88 22 L85 20 L80 17 L77 15 L73 19"
+          d="M72 20 L77 11 L78 10 L78 12 L77 14 L75 19 L78 25 L73 23 L72 28 L72 26 L72 24 L72 22"
           fill="none"
           stroke="hsl(var(--terracotta))"
           strokeWidth="0.4"
