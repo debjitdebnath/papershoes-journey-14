@@ -3,14 +3,18 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 
 const routePoints = [
-  { id: 1, x: 77, y: 28, city: 'Delhi', waste: 'High', plastic: 'PET, HDPE', action: 'Community cleanup' },
-  { id: 2, x: 80, y: 26, city: 'Lucknow', waste: 'Medium', plastic: 'LDPE, PP', action: 'School workshops' },
-  { id: 3, x: 83, y: 25, city: 'Varanasi', waste: 'Critical', plastic: 'Mixed', action: 'River patrol' },
-  { id: 4, x: 88, y: 22, city: 'Kolkata', waste: 'High', plastic: 'PET, PS', action: 'Municipal talks' },
-  { id: 5, x: 85, y: 20, city: 'Bhubaneswar', waste: 'Medium', plastic: 'HDPE', action: 'Youth engagement' },
-  { id: 6, x: 80, y: 17, city: 'Chennai', waste: 'High', plastic: 'PET, PP', action: 'Beach cleanup' },
-  { id: 7, x: 77, y: 15, city: 'Bangalore', waste: 'Medium', plastic: 'Mixed', action: 'Tech solutions' },
-  { id: 8, x: 73, y: 19, city: 'Mumbai', waste: 'Critical', plastic: 'All types', action: 'Policy advocacy' },
+  { id: 1, x: 72, y: 20, city: 'Ahmedabad', waste: 'High', plastic: 'PET, packaging', action: 'Launch & riverfront cleanup' },
+  { id: 2, x: 77, y: 11, city: 'Dehradun', waste: 'Medium', plastic: 'LDPE, PP', action: 'Foothills trail cleanup' },
+  { id: 3, x: 78, y: 10, city: 'Rishikesh', waste: 'Critical', plastic: 'Mixed', action: 'Ganga riverbank patrol' },
+  { id: 4, x: 78, y: 12, city: 'Haridwar', waste: 'Critical', plastic: 'Mixed', action: 'Plastic-free ghat pledge' },
+  { id: 5, x: 77, y: 14, city: 'Delhi', waste: 'Critical', plastic: 'All types', action: 'Policy advocacy' },
+  { id: 6, x: 75, y: 19, city: 'Indore', waste: 'Low', plastic: 'Multi-layer', action: 'Model-city exchange' },
+  { id: 7, x: 78, y: 25, city: 'Hyderabad', waste: 'High', plastic: 'Industrial, PET', action: 'Innovation showcase' },
+  { id: 8, x: 73, y: 23, city: 'Nashik', waste: 'Medium', plastic: 'Agri film', action: 'Farm-plastic drive' },
+  { id: 9, x: 72, y: 28, city: 'Goa', waste: 'High', plastic: 'Ocean debris', action: 'Beach cleanup & brand audit' },
+  { id: 10, x: 72, y: 26, city: 'Velas', waste: 'Medium', plastic: 'Ghost gear', action: 'Turtle nesting protection' },
+  { id: 11, x: 72, y: 24, city: 'Alibaug', waste: 'Medium', plastic: 'Tourism waste', action: 'Coastal stewardship' },
+  { id: 12, x: 72, y: 22, city: 'Mumbai', waste: 'Critical', plastic: 'All types', action: 'Finale & national pledge' },
 ];
 
 const IndiaMapSVG = () => {
@@ -34,7 +38,7 @@ const IndiaMapSVG = () => {
         
         {/* Route path */}
         <motion.path
-          d="M77 28 L80 26 L83 25 L88 22 L85 20 L80 17 L77 15 L73 19"
+          d="M72 20 L77 11 L78 10 L78 12 L77 14 L75 19 L78 25 L73 23 L72 28 L72 26 L72 24 L72 22"
           fill="none"
           stroke="hsl(var(--terracotta))"
           strokeWidth="0.4"

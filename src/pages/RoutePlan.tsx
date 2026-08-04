@@ -1,36 +1,40 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, MapPin, Calendar, Route as RouteIcon, Flag, Trophy } from 'lucide-react';
+import { ArrowLeft, MapPin, Calendar, Route as RouteIcon, Flag, Trophy, Waves, ArrowRight, Users } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { routeStops } from '@/data/routePlan';
+import AnimatedCounter from '@/components/charts/AnimatedCounter';
+import RouteMapSVG from '@/components/charts/RouteMapSVG';
+import {
+  routeStops,
+  chapters,
+  journeyStats,
+  getStopStatus,
+  getCampaignProgress,
+  TOTAL_DISTANCE_KM,
+} from '@/data/routePlan';
 
-const stageMeta = {
-  1: {
-    title: 'Stage 1',
-    subtitle: 'Gujarat → Rajasthan → Delhi → Uttarakhand → Sikkim → Assam → West Bengal → Andhra Pradesh',
-    window: '1 Oct – ~5 Nov',
-  },
-  2: {
-    title: 'Stage 2',
-    subtitle: 'Telangana → Tamil Nadu → Puducherry → Kerala → Karnataka → Goa → Maharashtra',
-    window: '~6 Nov – 20 Dec',
-  },
+const statusStyles = {
+  completed: 'bg-sage-light text-sage-dark',
+  current: 'bg-terracotta/15 text-terracotta',
+  upcoming: 'bg-muted text-muted-foreground',
+} as const;
+
+const statusLabel = {
+  completed: 'Completed',
+  current: 'Running now',
+  upcoming: 'Upcoming',
 } as const;
 
 const RoutePlan = () => {
-  const [activeStage, setActiveStage] = useState<1 | 2>(1);
-
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'Final Route Plan • 80 Marathons in 80 Days | PaperShoes';
+    document.title = 'From Source to Sea • The 80-Day Route | PaperShoes';
   }, []);
 
-  const stops = useMemo(() => routeStops.filter(s => s.stage === activeStage), [activeStage]);
-  const totalMarathons = routeStops.reduce((sum, s) => sum + s.marathons, 0);
-  const stageMarathons = stops.reduce((sum, s) => sum + s.marathons, 0);
+  const progress = getCampaignProgress();
 
   return (
     <div className="min-h-screen bg-background">
@@ -54,34 +58,35 @@ const RoutePlan = () => {
             className="max-w-3xl"
           >
             <span className="inline-block px-4 py-1.5 bg-sage-light text-sage-dark text-sm font-medium rounded-full mb-4">
-              Final Route Plan
+              The Route
             </span>
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4 leading-tight">
-              80 Marathons. <span className="text-sage">80 Days.</span> One India.
+              From Source <span className="text-sage">to Sea.</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              From the Sabarmati Riverfront to the Mumbai coastline — every stop on the journey,
-              every route, every zone we run through to make plastic visible.
+              80 marathons in 80 days, following plastic on its own journey — from the inland cities
+              where it is made and discarded, down India’s great rivers, and out to the coastline
+              where the ocean hands it back.
+            </p>
+            <p className="text-base text-muted-foreground mt-3">
+              Ahmedabad → Dehradun → Rishikesh → Haridwar → Delhi → Indore → Hyderabad → Nashik →
+              Goa → Velas → Alibaug → Mumbai
             </p>
           </motion.div>
 
-          {/* Summary tiles */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 max-w-4xl">
-            {[
-              { icon: RouteIcon, label: 'Total marathons', value: totalMarathons },
-              { icon: MapPin, label: 'Stops', value: routeStops.length },
-              { icon: Calendar, label: 'Days', value: 80 },
-              { icon: Flag, label: 'Stages', value: 2 },
-            ].map((stat, i) => (
+          {/* Journey stats */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-10">
+            {journeyStats.map((stat, i) => (
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
+                transition={{ duration: 0.4, delay: 0.1 + i * 0.06 }}
                 className="bg-card rounded-2xl p-5 shadow-card border border-border/50"
               >
-                <stat.icon className="w-5 h-5 text-sage mb-2" />
-                <div className="text-3xl font-bold text-foreground">{stat.value}</div>
+                <div className="text-3xl font-bold text-foreground">
+                  <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                </div>
                 <div className="text-xs text-muted-foreground mt-1">{stat.label}</div>
               </motion.div>
             ))}
@@ -89,51 +94,118 @@ const RoutePlan = () => {
         </div>
       </section>
 
-      {/* Stage tabs */}
+      {/* Live progress tracker */}
       <section className="py-12">
         <div className="container mx-auto px-6">
-          <div className="flex flex-wrap items-center gap-3 mb-10">
-            {([1, 2] as const).map(stage => (
-              <button
-                key={stage}
-                onClick={() => setActiveStage(stage)}
-                className={`px-5 py-2.5 rounded-full text-sm font-medium border transition-all ${
-                  activeStage === stage
-                    ? 'bg-sage text-primary-foreground border-sage shadow-md'
-                    : 'bg-card text-foreground border-border hover:border-sage/60'
-                }`}
+          <div className="bg-card rounded-3xl border border-border/50 shadow-card p-6 md:p-8">
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-5">
+              <div>
+                <h2 className="text-2xl font-bold text-foreground">Journey progress</h2>
+                <p className="text-sm text-muted-foreground mt-1">
+                  {progress.finished
+                    ? 'The 80-day journey is complete.'
+                    : progress.started
+                      ? `Day ${progress.dayNumber} of 80 · currently in ${progress.currentStop.city}`
+                      : `Starting 1 October in ${routeStops[0].city}`}
+                </p>
+              </div>
+              <span className="px-4 py-1.5 rounded-full bg-terracotta/15 text-terracotta text-sm font-semibold">
+                {progress.percent}% complete
+              </span>
+            </div>
+
+            <div className="h-3 w-full rounded-full bg-muted overflow-hidden">
+              <motion.div
+                className="h-full rounded-full bg-sage"
+                initial={{ width: 0 }}
+                animate={{ width: `${progress.percent}%` }}
+                transition={{ duration: 1.2, ease: 'easeOut' }}
+              />
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+              {[
+                { icon: RouteIcon, label: 'Marathons completed', value: `${progress.marathonsDone} / 80` },
+                { icon: Waves, label: 'Distance covered', value: `${progress.distanceCovered.toLocaleString()} km` },
+                { icon: MapPin, label: 'Distance remaining', value: `${progress.distanceRemaining.toLocaleString()} km` },
+                { icon: Flag, label: 'Next stop', value: progress.nextStop ? progress.nextStop.city : 'Finish line' },
+              ].map(item => (
+                <div key={item.label} className="rounded-2xl bg-secondary/40 p-4">
+                  <item.icon className="w-4 h-4 text-sage mb-2" />
+                  <div className="text-lg font-bold text-foreground">{item.value}</div>
+                  <div className="text-xs text-muted-foreground mt-0.5">{item.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive map */}
+      <section className="py-12 bg-secondary/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mb-8">
+            <h2 className="text-3xl font-bold text-foreground mb-2">The route, drawn</h2>
+            <p className="text-muted-foreground">
+              Hover or tap a stop to see its dates, theme and story. The line follows the water —
+              from the Sabarmati and the Ganga, down the Godavari, and out to the Arabian Sea.
+            </p>
+          </div>
+          <div className="bg-card rounded-3xl border border-border/50 shadow-card p-4 md:p-8">
+            <RouteMapSVG />
+          </div>
+        </div>
+      </section>
+
+      {/* Narrative chapters */}
+      <section className="py-12">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mb-8">
+            <h2 className="text-3xl font-bold text-foreground mb-2">The documentary storyline</h2>
+            <p className="text-muted-foreground">
+              Eight chapters, filmed along the route, tracing plastic from the place it is dropped
+              to the place it comes back.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {chapters.map((chapter, i) => (
+              <motion.div
+                key={chapter.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.4, delay: (i % 4) * 0.06 }}
+                className="bg-card rounded-2xl p-5 border border-border/50 shadow-card"
               >
-                {stageMeta[stage].title} • {stageMeta[stage].window}
-              </button>
+                <div className="text-xs font-semibold text-terracotta mb-2">Chapter {i + 1}</div>
+                <h3 className="text-base font-bold text-foreground leading-snug">{chapter.title}</h3>
+                <p className="text-xs text-sage-dark mt-1">{chapter.cities}</p>
+                <p className="text-sm text-muted-foreground mt-2">{chapter.blurb}</p>
+              </motion.div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <motion.div
-            key={activeStage}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="mb-8"
-          >
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-              {stageMeta[activeStage].title}
-            </h2>
-            <p className="text-muted-foreground">{stageMeta[activeStage].subtitle}</p>
-            <p className="text-sm text-sage-dark mt-2 font-medium">
-              {stops.length} stops · {stageMarathons} marathons · {stageMeta[activeStage].window}
+      {/* Timeline of stops */}
+      <section className="py-12 bg-secondary/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mb-10">
+            <h2 className="text-3xl font-bold text-foreground mb-2">Every stop on the journey</h2>
+            <p className="text-muted-foreground">
+              Twelve cities. Each one a different chapter of India’s plastic story.
             </p>
-          </motion.div>
+          </div>
 
-          {/* Timeline of stops */}
           <div className="relative">
-            {/* vertical line */}
             <div className="absolute left-5 md:left-1/2 top-0 bottom-0 w-px bg-sage/30 -translate-x-1/2" aria-hidden />
 
             <div className="space-y-6">
-              {stops.map((stop, idx) => {
-                const isFinish = /Finish/i.test(stop.city);
-                const isStart = /Start/i.test(stop.city);
-                const side = idx % 2 === 0 ? 'md:pr-12 md:text-right md:items-end md:ml-0 md:mr-auto' : 'md:pl-12 md:ml-auto';
+              {routeStops.map((stop, idx) => {
+                const isFinish = stop.seq === routeStops.length;
+                const isStart = stop.seq === 1;
+                const status = getStopStatus(stop);
+                const side = idx % 2 === 0 ? 'md:pr-12 md:ml-0 md:mr-auto' : 'md:pl-12 md:ml-auto';
 
                 return (
                   <motion.div
@@ -144,8 +216,11 @@ const RoutePlan = () => {
                     transition={{ duration: 0.45, delay: (idx % 4) * 0.05 }}
                     className="relative pl-14 md:pl-0 md:w-1/2 md:flex md:flex-col"
                   >
-                    {/* node */}
-                    <div className="absolute left-5 md:left-1/2 top-6 w-4 h-4 rounded-full bg-sage border-4 border-background -translate-x-1/2 z-10" />
+                    <div
+                      className={`absolute left-5 md:left-1/2 top-6 w-4 h-4 rounded-full border-4 border-background -translate-x-1/2 z-10 ${
+                        status === 'upcoming' ? 'bg-muted-foreground/50' : status === 'current' ? 'bg-terracotta' : 'bg-sage'
+                      }`}
+                    />
 
                     <div className={`bg-card rounded-2xl p-6 shadow-card border border-border/50 hover:border-sage/60 hover:shadow-lg transition-all ${side}`}>
                       <div className="flex items-start gap-3 mb-3">
@@ -159,30 +234,44 @@ const RoutePlan = () => {
                           )}
                         </div>
                         <div className="flex-1 min-w-0 text-left">
-                          <h3 className="text-lg font-bold text-foreground leading-tight">
-                            {stop.city}
-                          </h3>
+                          <h3 className="text-lg font-bold text-foreground leading-tight">{stop.city}</h3>
                           <p className="text-sm text-muted-foreground">{stop.state}</p>
                         </div>
-                        <span className="px-3 py-1 rounded-full bg-terracotta/10 text-terracotta text-xs font-semibold whitespace-nowrap">
-                          {stop.marathons} {stop.marathons === 1 ? 'run' : 'runs'}
+                        <span className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${statusStyles[status]}`}>
+                          {statusLabel[status]}
                         </span>
                       </div>
+
+                      <span className="inline-block px-3 py-1 rounded-full bg-terracotta/10 text-terracotta text-xs font-semibold mb-3">
+                        {stop.theme}
+                      </span>
 
                       <div className="text-left space-y-2 text-sm">
                         <div className="flex items-start gap-2">
                           <Calendar className="w-4 h-4 text-sage mt-0.5 shrink-0" />
-                          <span className="text-foreground font-medium">{stop.dates}</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <MapPin className="w-4 h-4 text-sage mt-0.5 shrink-0" />
-                          <span className="text-muted-foreground">{stop.zone}</span>
+                          <span className="text-foreground font-medium">
+                            {stop.dates} · {stop.days} days · {stop.marathons} marathons
+                          </span>
                         </div>
                         <div className="flex items-start gap-2">
                           <RouteIcon className="w-4 h-4 text-sage mt-0.5 shrink-0" />
                           <span className="text-muted-foreground">{stop.route}</span>
                         </div>
+                        <div className="flex items-start gap-2">
+                          <Users className="w-4 h-4 text-sage mt-0.5 shrink-0" />
+                          <span className="text-muted-foreground">{stop.impact}</span>
+                        </div>
                       </div>
+
+                      <p className="text-sm text-muted-foreground mt-4 leading-relaxed">{stop.story}</p>
+
+                      <Link
+                        to={`/route-plan/${stop.slug}`}
+                        className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-terracotta hover:gap-2.5 transition-all"
+                      >
+                        Read the {stop.city} story
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
                   </motion.div>
                 );
@@ -191,14 +280,18 @@ const RoutePlan = () => {
           </div>
 
           <p className="text-center text-xs text-muted-foreground mt-12 italic">
-            This route plan is largely final and may see minor refinements as logistics and local conditions are confirmed.
+            {TOTAL_DISTANCE_KM.toLocaleString()} km on foot. Dates may see minor refinements as
+            logistics and local conditions are confirmed.
           </p>
 
-          <div className="flex justify-center mt-10">
+          <div className="flex flex-wrap justify-center gap-4 mt-10">
             <Button variant="hero" size="lg" asChild>
               <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">
-                Support the Journey
+                Donate
               </a>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/five-pillars">See the Five Pillars</Link>
             </Button>
           </div>
         </div>
