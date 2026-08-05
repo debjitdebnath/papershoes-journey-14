@@ -57,11 +57,10 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-bold mb-4">Get Involved</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-beige/70 hover:text-beige transition-colors">Volunteer</a></li>
-              <li><a href="#" className="text-beige/70 hover:text-beige transition-colors">Host a Workshop</a></li>
-              <li><a href="#" className="text-beige/70 hover:text-beige transition-colors">Corporate Partnership</a></li>
-              <li><a href="#" className="text-beige/70 hover:text-beige transition-colors">Press & Media</a></li>
-              <li><a href="#" className="text-beige/70 hover:text-beige transition-colors">FAQs</a></li>
+              <li><a href="https://forms.gle/oKeAr6ybVt5cnTpA6" target="_blank" rel="noopener noreferrer" className="text-beige/70 hover:text-beige transition-colors">Volunteer (form)</a></li>
+              <li><a href="https://forms.gle/aE5DMEJQEuu3WDyV7" target="_blank" rel="noopener noreferrer" className="text-beige/70 hover:text-beige transition-colors">Host a Workshop (form)</a></li>
+              <li><a href="https://forms.gle/f6j91sSbvW1BA8xz7" target="_blank" rel="noopener noreferrer" className="text-beige/70 hover:text-beige transition-colors">Corporate Partnership (form)</a></li>
+              <li><a href="https://forms.gle/VHMjY9gtTTztiHqx7" target="_blank" rel="noopener noreferrer" className="text-beige/70 hover:text-beige transition-colors">Press &amp; Media (form)</a></li>
             </ul>
           </div>
 
