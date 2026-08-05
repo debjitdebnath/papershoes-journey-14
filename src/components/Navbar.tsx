@@ -66,11 +66,11 @@ const Navbar = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
-            
             <Button variant="hero" size="default" asChild>
-              <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">Donate</a>
+              <Link to="/route-plan" onClick={() => window.scrollTo(0, 0)}>Follow the Run</Link>
             </Button>
           </div>
+
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
@@ -101,9 +101,10 @@ const Navbar = () => {
                   </Link>)}
                 <div className="pt-4 px-5">
                   <Button variant="hero" className="w-full text-lg py-6" asChild>
-                    <a href="https://gofund.me/62b8c3961" target="_blank" rel="noopener noreferrer">Donate Now</a>
+                    <Link to="/route-plan" onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }}>Follow the Run</Link>
                   </Button>
                 </div>
+
               </div>
             </motion.div>}
         </AnimatePresence>
