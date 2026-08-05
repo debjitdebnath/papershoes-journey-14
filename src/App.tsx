@@ -14,6 +14,7 @@ import RoutePlan from "./pages/RoutePlan";
 import CityStory from "./pages/CityStory";
 import FivePillars from "./pages/FivePillars";
 import NotFound from "./pages/NotFound";
+import FloatingDonate from "@/components/FloatingDonate";
 
 const queryClient = new QueryClient();
 
@@ -37,7 +38,9 @@ const App = () => (
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <FloatingDonate />
         </BrowserRouter>
+
       </CartProvider>
     </TooltipProvider>
   </QueryClientProvider>
