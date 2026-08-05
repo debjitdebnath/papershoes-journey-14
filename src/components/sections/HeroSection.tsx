@@ -1,4 +1,5 @@
-import { Play, Heart } from 'lucide-react';
+import { Play, Heart, Footprints } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const YOUTUBE_URL = 'https://youtu.be/7zzznw3fGyA?si=CQtJtK0Rhq7T6ZX6';
@@ -46,6 +47,18 @@ const HeroSection = () => {
                 DONATE
               </a>
             </Button>
+
+            <Button
+              size="lg"
+              asChild
+              className="bg-white/10 backdrop-blur-md border border-white/40 text-white hover:bg-white/20 font-bold uppercase tracking-wide rounded-full px-8"
+            >
+              <Link to="/route-plan" onClick={() => window.scrollTo(0, 0)}>
+                <Footprints size={18} />
+                Follow the Run
+              </Link>
+            </Button>
+
 
             <a
               href={YOUTUBE_URL}
