@@ -48,6 +48,18 @@ const HeroSection = () => {
               </a>
             </Button>
 
+            <Button
+              size="lg"
+              asChild
+              className="bg-white/10 backdrop-blur-md border border-white/40 text-white hover:bg-white/20 font-bold uppercase tracking-wide rounded-full px-8"
+            >
+              <Link to="/route-plan" onClick={() => window.scrollTo(0, 0)}>
+                <Footprints size={18} />
+                Follow the Run
+              </Link>
+            </Button>
+
+
             <a
               href={YOUTUBE_URL}
               target="_blank"

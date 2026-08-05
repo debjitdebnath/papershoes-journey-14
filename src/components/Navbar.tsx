@@ -15,6 +15,9 @@ const navLinks = [{
   name: 'Impact',
   href: '/#impact'
 }, {
+  name: 'Follow the Run',
+  href: '/route-plan'
+}, {
   name: 'Join Us',
   href: '/#join'
 }, {
@@ -23,9 +26,6 @@ const navLinks = [{
 }, {
   name: 'Blog',
   href: '/blog'
-}, {
-  name: 'Donate',
-  href: '/#donate'
 }];
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
