@@ -1,4 +1,5 @@
-import { Play, Heart } from 'lucide-react';
+import { Play, Heart, Footprints } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const YOUTUBE_URL = 'https://youtu.be/7zzznw3fGyA?si=CQtJtK0Rhq7T6ZX6';
