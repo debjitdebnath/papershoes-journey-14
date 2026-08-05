@@ -13,6 +13,8 @@ import Blog from "./pages/Blog";
 import RoutePlan from "./pages/RoutePlan";
 import CityStory from "./pages/CityStory";
 import FivePillars from "./pages/FivePillars";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import FloatingDonate from "@/components/FloatingDonate";
 
@@ -35,6 +37,8 @@ const App = () => (
             <Route path="/route-plan" element={<RoutePlan />} />
             <Route path="/route-plan/:slug" element={<CityStory />} />
             <Route path="/five-pillars" element={<FivePillars />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<Terms />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

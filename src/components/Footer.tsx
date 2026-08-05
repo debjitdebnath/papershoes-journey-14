@@ -101,13 +101,13 @@ const Footer = () => {
                 info@paper.shoes
               </a>
               <span className="text-beige/40">|</span>
-              <a href="#" className="text-beige/70 hover:text-beige text-sm transition-colors">
+              <Link to="/privacy" className="text-beige/70 hover:text-beige text-sm transition-colors">
                 Privacy Policy
-              </a>
+              </Link>
               <span className="text-beige/40">|</span>
-              <a href="#" className="text-beige/70 hover:text-beige text-sm transition-colors">
+              <Link to="/terms" className="text-beige/70 hover:text-beige text-sm transition-colors">
                 Terms
-              </a>
+              </Link>
             </div>
           </div>
         </div>
