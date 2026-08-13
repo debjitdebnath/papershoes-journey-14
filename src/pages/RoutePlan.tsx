@@ -69,7 +69,7 @@ const RoutePlan = () => {
               where the ocean hands it back.
             </p>
             <p className="text-base text-muted-foreground mt-3">
-              Ahmedabad → Dehradun → Rishikesh → Haridwar → Delhi → Indore → Hyderabad → Nashik →
+              Ahmedabad → Dehradun → Rishikesh → Haridwar → Delhi → Indore → Hyderabad → Hampi →
               Goa → Velas → Alibaug → Mumbai
             </p>
           </motion.div>
