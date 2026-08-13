@@ -10,7 +10,7 @@ const routePoints = [
   { id: 5, x: 77, y: 14, city: 'Delhi', waste: 'Critical', plastic: 'All types', action: 'Policy advocacy' },
   { id: 6, x: 75, y: 19, city: 'Indore', waste: 'Low', plastic: 'Multi-layer', action: 'Model-city exchange' },
   { id: 7, x: 78, y: 25, city: 'Hyderabad', waste: 'High', plastic: 'Industrial, PET', action: 'Innovation showcase' },
-  { id: 8, x: 73, y: 23, city: 'Nashik', waste: 'Medium', plastic: 'Agri film', action: 'Farm-plastic drive' },
+  { id: 8, x: 62, y: 74, city: 'Hampi', waste: 'Medium', plastic: 'Tourist packaging', action: 'Heritage-site cleanups' },
   { id: 9, x: 72, y: 28, city: 'Goa', waste: 'High', plastic: 'Ocean debris', action: 'Beach cleanup & brand audit' },
   { id: 10, x: 72, y: 26, city: 'Velas', waste: 'Medium', plastic: 'Ghost gear', action: 'Turtle nesting protection' },
   { id: 11, x: 72, y: 24, city: 'Alibaug', waste: 'Medium', plastic: 'Tourism waste', action: 'Coastal stewardship' },

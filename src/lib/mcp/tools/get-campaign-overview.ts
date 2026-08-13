@@ -14,7 +14,7 @@ export default defineTool({
         type: "text",
         text: [
           "Paper Shoes 80 is an endurance-driven environmental campaign: 80 marathons in 80 days across India, themed 'From Source to Sea'.",
-          "Route (1 Oct – 19 Dec 2026, 12 cities, 8+ states, ~3,376 km): Ahmedabad, Dehradun, Rishikesh, Haridwar, Delhi, Indore, Hyderabad, Nashik, Goa, Velas, Alibaug, Mumbai.",
+          "Route (1 Oct – 19 Dec 2026, 12 cities, 8+ states, ~3,376 km): Ahmedabad, Dehradun, Rishikesh, Haridwar, Delhi, Indore, Hyderabad, Hampi, Goa, Velas, Alibaug, Mumbai.",
           "Mission: turn endurance into environmental action against plastic pollution through school visits, community runs, and clean-ups.",
           "Runners: Matteo, Nagaraju, and Michael.",
           "Framework: Five Pillars of Change — Symbolic Action, Community Activation, Data & Accountability, Youth Education, Legacy & Systems Change.",
