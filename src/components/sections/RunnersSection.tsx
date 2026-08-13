@@ -78,7 +78,7 @@ const RunnersSection = () => {
                   src={runner.image}
                   alt={runner.alt}
                   loading="lazy"
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full object-cover ${runner.id === 'matteo' ? 'object-top' : ''}`}
                 />
               </div>
               <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-1">
