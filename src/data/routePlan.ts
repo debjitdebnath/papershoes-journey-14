@@ -492,7 +492,7 @@ export const chapters = [
   { title: 'Rivers of India', cities: 'Dehradun, Rishikesh, Haridwar', blurb: 'Following plastic into the Ganga system.' },
   { title: 'Cities That Can Change', cities: 'Delhi & Indore', blurb: 'Policy in the capital, proof in the cleanest city.' },
   { title: 'Innovation at Scale', cities: 'Hyderabad', blurb: 'Eighteen days with the people building alternatives.' },
-  { title: 'Following the River', cities: 'Nashik', blurb: 'Farm plastic, the Godavari and the road to the coast.' },
+  { title: 'Running Through Heritage', cities: 'Hampi', blurb: 'Ruins, the Tungabhadra and the cost of tourist plastic.' },
   { title: 'From River to Ocean', cities: 'Goa', blurb: 'What the rivers finally deliver to the sea.' },
   { title: 'Protecting Marine Life', cities: 'Velas & Alibaug', blurb: 'Turtles, mangroves and coastal stewardship.' },
   { title: 'The National Finish', cities: 'Mumbai', blurb: 'Source to sea, completed.' },
