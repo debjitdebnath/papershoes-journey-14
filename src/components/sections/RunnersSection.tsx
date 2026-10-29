@@ -9,6 +9,7 @@ interface Runner {
   age: number;
   location: string;
   bio: string;
+  note?: string;
   image: string;
   alt: string;
 }
@@ -29,6 +30,7 @@ const runners: Runner[] = [
     age: 28,
     location: 'Como, Italy',
     bio: 'Personal trainer and climber. Runs to protect Mother Nature and raise awareness of plastic\'s health impact.',
+    note: 'Update: Matteo was injured before the campaign began and is unable to join this run. He remains part of the mission from home.',
     image: matteo,
     alt: 'Matteo holding a plastic bottle in the Italian mountains',
   },
@@ -90,6 +92,11 @@ const RunnersSection = () => {
               <p className="text-base text-foreground/80 leading-relaxed">
                 {runner.bio}
               </p>
+              {runner.note && (
+                <p className="mt-3 text-sm italic text-muted-foreground leading-relaxed">
+                  {runner.note}
+                </p>
+              )}
             </motion.article>
           ))}
         </div>
