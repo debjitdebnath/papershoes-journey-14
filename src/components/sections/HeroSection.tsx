@@ -21,19 +21,19 @@ const HeroSection = () => {
       <div className="relative container mx-auto px-6 pt-12 md:pt-20 pb-16">
         <div className="max-w-2xl">
           <h1 className="font-sans font-black uppercase leading-[0.95] tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
-            <span className="block text-white">80 Marathons.</span>
-            <span className="block text-white">80 Days.</span>
-            <span className="block text-[hsl(85,75%,55%)]">Across India.</span>
+            <span className="block text-white">80 MARATHONS</span>
+            <span className="block text-white">80 DAYS</span>
+            <span className="block text-[hsl(85,75%,55%)]">ACROSS INDIA</span>
           </h1>
 
           <div className="inline-block mt-6 px-5 py-2 bg-[hsl(85,55%,35%)]/80 border border-[hsl(85,75%,55%)]/40">
             <p className="font-sans font-bold uppercase tracking-wide text-white text-lg md:text-xl">
-              One Incredible Mission.
+              ONE INCREDIBLE MISSION
             </p>
           </div>
 
           <p className="mt-6 text-base md:text-lg text-white/90 max-w-md leading-relaxed">
-            Three men. One mission. 80 marathons. Running across India to bring hope, opportunity, and change.
+            Two men. One mission. 80 marathons. Running across India to bring hope, opportunity, and change.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
