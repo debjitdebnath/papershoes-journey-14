@@ -156,19 +156,17 @@ const GallerySection = () => {
           </p>
         ) : (
           <div className="columns-2 md:columns-3 gap-4 [column-fill:_balance]">
-            {photos.map((photo, i) => (
+            {photos.map((photo) => (
               <button
                 key={photo.id}
                 onClick={() => setLightbox(photo)}
-                className={`group relative block w-full mb-4 break-inside-avoid overflow-hidden rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta ${
-                  i % 3 === 0 ? "aspect-[3/4]" : i % 3 === 1 ? "aspect-square" : "aspect-[4/3]"
-                }`}
+                className="group relative block w-full mb-4 break-inside-avoid overflow-hidden rounded-xl bg-sage/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta"
               >
                 <img
                   src={photo.url}
                   alt={photo.caption ?? "Campaign photo"}
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.03]"
                 />
                 <span className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 {photo.caption && (
