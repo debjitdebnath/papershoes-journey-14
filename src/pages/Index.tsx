@@ -7,6 +7,7 @@ import RunnersSection from '@/components/sections/RunnersSection';
 import FrameworkSection from '@/components/sections/FrameworkSection';
 import PlasticCrisisPreview from '@/components/sections/PlasticCrisisPreview';
 import TrackerSection from '@/components/sections/TrackerSection';
+import GallerySection from '@/components/sections/GallerySection';
 import ImpactSection from '@/components/sections/ImpactSection';
 import JoinSection from '@/components/sections/JoinSection';
 import ShopSection from '@/components/sections/ShopSection';
@@ -24,6 +25,7 @@ const Index = () => {
         <FrameworkSection />
         <PlasticCrisisPreview />
         <TrackerSection />
+        <GallerySection />
         <ImpactSection />
         <JoinSection />
         <ShopSection />

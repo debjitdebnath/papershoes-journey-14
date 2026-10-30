@@ -1,0 +1,1 @@
+GRANT SELECT ON public.gallery_photos TO anon, authenticated;
