@@ -25,6 +25,7 @@ const Index = () => {
         <FrameworkSection />
         <PlasticCrisisPreview />
         <TrackerSection />
+        <GallerySection />
         <ImpactSection />
         <JoinSection />
         <ShopSection />
