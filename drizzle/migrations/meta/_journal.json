@@ -8,6 +8,13 @@
       "when": 1793286756653,
       "tag": "0000_create_gallery_photos",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793348982021,
+      "tag": "0001_grant_gallery_photos_read",
+      "breakpoints": true
     }
   ]
 }
