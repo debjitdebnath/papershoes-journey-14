@@ -1,12 +1,12 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { GraduationCap, Home, Users, Trash2, FileBarChart, Globe } from 'lucide-react';
+import { GraduationCap, Home, Users, BookOpen, FileBarChart, Globe } from 'lucide-react';
 
 const stats = [
   { icon: GraduationCap, value: '100K+', label: 'Students Reached', color: 'sage' },
   { icon: Home, value: '1K+', label: 'Households Transformed', color: 'terracotta' },
   { icon: Users, value: '500+', label: 'Volunteer Groups', color: 'orange' },
-  { icon: Trash2, value: '50+ t', label: 'Plastic Removed', color: 'orange' },
+  { icon: BookOpen, value: 'Learn & act', label: 'Children’s stories by young authors', color: 'orange' },
   { icon: FileBarChart, value: '80', label: 'Municipal Reports', color: 'sage' },
   { icon: Globe, value: '10M+', label: 'Reached Online', color: 'terracotta' },
 ];
@@ -36,6 +36,9 @@ const ImpactSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-beige">
             Intended <span className="text-orange">Impact</span>
           </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-beige/80 md:text-base">
+            We raise awareness of the plastic pollution crisis, inspire community clean-ups, and educate children through learning materials and stories written by young authors.
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto">

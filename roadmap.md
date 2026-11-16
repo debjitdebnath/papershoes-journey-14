@@ -1,5 +1,6 @@
 # Roadmap
 
+- [x] Replace plastic-removal targets with the campaign's awareness, clean-up, and youth-education message
 - [x] Store upload password (papershoes80_BRIGHT) as backend secret
 - [x] Create campaign-gallery storage bucket + read policies
 - [x] Create gallery_photos table (public read) via migration
